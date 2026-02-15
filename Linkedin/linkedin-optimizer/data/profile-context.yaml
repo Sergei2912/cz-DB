@@ -1,0 +1,290 @@
+# LinkedIn Profile Optimization Context
+# Dr. Sergii Anipreyev — Israeli Healthcare Market
+# Last updated: 2026-02-15
+#
+# DATA SOURCE ARCHITECTURE:
+# This YAML contains CONFIGURATION (keywords, templates, rhythm, pillars).
+# All FACTUAL DATA (differentiators, metrics, credentials, dates) is fetched
+# dynamically from Universita Hub (7 Notion databases) at runtime.
+# The differentiators below are FALLBACK values only — always prefer live Notion data.
+
+# ─── NOTION DATA SOURCES (Universita Hub) ────────────────────────────────
+data_sources:
+  universita_hub:
+    parent_page: "304d835b-048b-81b7-985d-fd49b2ef9d4d"
+    databases:
+      skills: "2c378459-4db3-4245-8439-88b9cd682b1e"       # 27 records — Name, Domain, Proficiency, Key Metrics, LinkedIn Ready
+      cv_items: "54b3754d-22c2-4b16-8649-3fd157cc74d7"      # 25 records — Section, Bullet Points, Key Metrics, LinkedIn Ready
+      timeline: "267309e9-5311-4a39-a664-f14659595766"       # 12 records — Event Type, Milestone, Key Outcome
+      documents: "0c045500-1957-40c5-b594-7907b0f5ad38"      # 19 records — Category, Content Summary, CV Relevant
+      institutions: "6b6df67f-19ac-491e-8222-ce3d0daa0654"   # 8 records  — Name, Type, Country
+      contacts: "fb80fa4f-a7cb-48ba-9cb4-36da2aeae446"       # 5 records  — Relationship Type, Military Rank
+      medical_lexicon: "acae23d9-42dd-4d0c-9a16-e9e88220805b" # 58 records — Term, Category, Domain, Hebrew, Strength, Source
+
+  linkedin_optimizer:
+    hub_page: "308d835b-048b-819d-b9b7-c764ec9ac267"
+    databases:
+      action_tracker: "a0056838-a991-4c03-a077-5371152f27d7"
+      content_bank: "f295698f-ca84-4d74-b06f-b74afa1cc96c"
+      metrics_log: "bcec5092-ca2e-4764-9763-e727b1ffb18b"
+
+  # Advisory layer — recruiter persona with verified Israeli dental market data
+  recruiter_persona:
+    agent_file: "agents/recruiter-persona.md"
+    persona_name: "Maya Cohen"
+    role: "Senior Healthcare Recruiter — Israeli dental market"
+    integration: "advisory"  # advisory = enriches other agents, does not replace them
+    # Maya's primary Boolean search strings (test profile against these)
+    boolean_searches:
+      - '("endodontist" OR "אנדודונט" OR "root canal" OR "טיפול שורש") AND ("Israel" OR "ישראל")'
+      - '("endodontist" OR "endodontics") AND ("surgical microscope" OR "מיקרוסקופ") AND ("Israel")'
+      - '("IDF" OR "צה״ל" OR "Medical Corps" OR "חיל רפואה") AND ("dentist" OR "dental" OR "רופא שיניים")'
+      - '("endodontist" OR "endodontics") AND ("DMD" OR "DDS") AND ("Israel" OR "relocation" OR "aliyah")'
+
+# ─── IDENTITY ────────────────────────────────────────────────────────────
+identity:
+  full_name: "Dr. Sergii Anipreyev"
+  credentials: "DMD"
+  primary_role: "Endodontist"
+  secondary_role: "Software Developer"
+  target_market: "Israel"
+  target_cities:
+    - "Tel Aviv"
+    - "Jerusalem"
+    - "Central District"
+
+# ─── DIFFERENTIATORS (fallback — prefer Notion live data) ────────────────
+# Source: Skills (LinkedIn Ready, sorted by Priority) + CV Items (Key Metrics)
+# At runtime, the agent fetches fresh data from Notion. These are fallbacks only.
+differentiators:
+  - id: idf_service
+    label: "IDF Medical Corps Captain (2015-2023)"
+    weight: 1.0  # strongest signal for Israeli market
+    description: "8 years military service, Captain rank, dental clinic commander"
+
+  - id: clinical_volume
+    label: "1,700+ endodontic procedures"
+    weight: 0.9
+    description: "Quantified clinical throughput demonstrating expertise"
+
+  - id: microscope_expertise
+    label: "375+ hours surgical microscope"
+    weight: 0.85
+    description: "Premium skill, not all clinics have microscopes"
+
+  - id: multilingual
+    label: "Hebrew, English, Russian, Ukrainian, Czech"
+    weight: 0.8
+    description: "Serves Israel's diverse population, 1M+ Russian speakers"
+
+  - id: eu_credentials
+    label: "Czech nostrifikace (Charles University, 2025)"
+    weight: 0.6
+    description: "EU credential adds international credibility"
+
+  - id: tech_skills
+    label: "Software Development + AI"
+    weight: 0.7
+    description: "Rare dual medical-tech profile for MedTech/startup ecosystem"
+
+keywords:
+  en:
+    position:
+      - "dentist"
+      - "dental surgeon"
+      - "endodontist"
+    specialty:
+      - "endodontics"
+      - "root canal treatment"
+      - "retreatment"
+    technology:
+      - "surgical microscope"
+      - "NiTi rotary files"
+      - "CBCT"
+    military:
+      - "IDF"
+      - "Medical Corps"
+      - "Captain"
+    credentials:
+      - "DMD"
+      - "licensed dentist"
+      - "board certified"
+    soft_skills:
+      - "team leadership"
+      - "clinic management"
+      - "training"
+    languages:
+      - "Hebrew"
+      - "English"
+      - "Russian"
+      - "Ukrainian"
+    location:
+      - "Israel"
+      - "Tel Aviv"
+      - "Jerusalem"
+      - "Central District"
+
+  he:
+    position:
+      - "רופא שיניים"
+      - "אנדודונט"
+    specialty:
+      - "אנדודונטיה"
+      - "טיפול שורש"
+    technology:
+      - "מיקרוסקופ כירורגי"
+      - "CBCT"
+    military:
+      - "צה״ל"
+      - "חיל רפואה"
+      - "קצין"
+    credentials:
+      - "DMD"
+      - "רישיון משרד הבריאות"
+    soft_skills:
+      - "מנהיגות"
+      - "ניהול קליניקה"
+      - "הכשרה"
+    languages:
+      - "עברית"
+      - "אנגלית"
+      - "רוסית"
+    location:
+      - "ישראל"
+      - "תל אביב"
+      - "ירושלים"
+      - "מרכז"
+
+content_pillars:
+  - id: clinical_cases
+    label: "Clinical Case Studies"
+    frequency: "bi-weekly"
+    language: "English"
+    examples:
+      - "Complex MB2 calcified canal — microscope-assisted approach"
+      - "Retreatment after failed RCT — step-by-step"
+
+  - id: idf_transition
+    label: "IDF-to-Civilian Transition"
+    frequency: "monthly"
+    language: "English/Hebrew"
+    examples:
+      - "Lessons from 8 years of military dental leadership"
+      - "From IDF clinic commander to private practice"
+
+  - id: european_perspective
+    label: "European vs Israeli Practice"
+    frequency: "monthly"
+    language: "English"
+    examples:
+      - "How Czech dental practice differs from Israeli standards"
+      - "What I learned navigating EU credential recognition"
+
+  - id: tech_in_dentistry
+    label: "Technology in Dentistry"
+    frequency: "bi-weekly"
+    language: "English"
+    examples:
+      - "Why every endodontist should use a surgical microscope"
+      - "AI applications in endodontic diagnosis"
+
+  - id: russian_patients
+    label: "Russian-Speaking Patient Care"
+    frequency: "monthly"
+    language: "English"
+    examples:
+      - "Cultural competence in serving Israel's Russian-speaking community"
+      - "Bridging language gaps in dental care"
+
+weekly_rhythm:
+  sunday:
+    - task: "Share clinical article with commentary"
+      time_min: 10
+      language: "English"
+    - task: "Send 3-5 connection requests (IDF alumni, dentists)"
+      time_min: 5
+      language: "Hebrew"
+  monday:
+    - task: "Like/comment on 2-3 posts in Israeli dental community"
+      time_min: 5
+      language: "HE/EN"
+  tuesday:
+    - task: "Like/comment on 2-3 posts"
+      time_min: 5
+      language: "HE/EN"
+    - task: "Send 3-5 connection requests"
+      time_min: 5
+      language: "Hebrew"
+  wednesday:
+    - task: "Like/comment on 2-3 posts"
+      time_min: 5
+      language: "HE/EN"
+  thursday:
+    - task: "Write original post (clinical tip, case insight)"
+      time_min: 20
+      language: "English"
+    - task: "Like/comment on 2-3 posts"
+      time_min: 5
+      language: "HE/EN"
+
+networking:
+  priority_targets:
+    - category: "IDF Alumni"
+      who: "Former colleagues from Medical Corps"
+      strategy: "Personal: reference shared service, unit, or base"
+    - category: "Clinic Owners"
+      who: "Private practice owners in target cities"
+      strategy: "Professional: highlight microscope + endo expertise"
+    - category: "Kupot Holim HR"
+      who: "Recruitment managers at Clalit, Maccabi, Meuhedet, Leumit"
+      strategy: "Formal: reference credentials and availability"
+    - category: "Dental Faculty"
+      who: "Hebrew University, TAU dental school faculty"
+      strategy: "Academic: mention clinical teaching interest"
+    - category: "Recruiters"
+      who: "Healthcare recruitment agencies"
+      strategy: "Direct: state specialty and availability"
+    - category: "MedTech Founders"
+      who: "Dental tech startup founders"
+      strategy: "Tech: highlight dual clinical-developer profile"
+    - category: "Industry Reps"
+      who: "Straumann, Nobel Biocare, Dentsply Israel reps"
+      strategy: "Industry: reference microscope/endo expertise"
+
+  linkedin_groups:
+    - "IDF Veterans Network / רשת בוגרי צה״ל"
+    - "Israel Healthcare Professionals"
+    - "Israeli Dental Association Network"
+    - "Digital Health Israel"
+    - "Startup Nation Healthcare"
+    - "Russian-Speaking Professionals in Israel"
+    - "MedTech Israel"
+
+headlines:
+  en: "Endodontist (DMD) | IDF Medical Corps Captain | 10+ Years | Surgical Microscope | 1,700+ Procedures"
+  he: "רופא שיניים (DMD) | קצין חיל רפואה צה״ל | אנדודונטיה | 10+ שנות ניסיון | מיקרוסקופ כירורגי"
+
+about_structure:
+  - section: "opening"
+    content: "Endodontist and former IDF Medical Corps Captain with 10+ years of clinical experience, seeking opportunities in Israeli dental practice."
+  - section: "military"
+    content: "IDF Medical Corps Captain (2015-2023), managed dental clinic operations, led clinical teams, responsible for treatment protocols and quality assurance."
+  - section: "clinical"
+    content: "1,700+ endodontic procedures, 375+ hours of surgical microscope work, advanced rotary NiTi instrumentation, CBCT-guided treatment planning."
+  - section: "international"
+    content: "DMD degree, nostrifikace (Charles University, 2025), European clinical experience."
+  - section: "languages"
+    content: "Hebrew, English, Russian, Ukrainian, Czech — serving Israel's diverse patient population."
+  - section: "cta"
+    content: "Open to clinical positions, partnerships, and consulting roles in endodontics across Israel."
+
+optimization_status:
+  current_phase: "setup"  # setup | active | maintaining
+  premium_active: false
+  open_to_work: false
+  profile_languages: []  # ["en", "he"] when configured
+  groups_joined: []
+  connections_sent_this_week: 0
+  posts_this_week: 0
+  last_audit_date: null
+  last_metrics_check: null
