@@ -1,4 +1,8 @@
-# LinkedIn Optimizer — Project Instructions
+# CLAUDE.md
+
+This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
+
+> Last updated: 2025-02-16
 
 ## Project Overview
 
@@ -19,6 +23,16 @@ Full-system LinkedIn profile optimizer for **Dr. Sergii Anipreyev (DMD)** target
 /linkedin-optimize metrics     # Read LinkedIn analytics via browser
 /linkedin-optimize keywords    # Keyword coverage analysis
 /linkedin-optimize status      # Progress dashboard + recruiter tier
+
+# Utility skills
+/content-bank save --type Post --pillar "Clinical Cases" --language English --title "Title"
+/content-bank list
+/notion-sync check             # Audit Content Bank metrics freshness
+/notion-sync diff --type Headline  # Show only stale entries
+
+# Slash commands (project-level shortcuts)
+/audit                         # Shortcut for /linkedin-optimize audit
+/weekly                        # Shortcut for /linkedin-optimize weekly
 ```
 
 ## Communication Rules
@@ -68,6 +82,47 @@ content-generator ─── profile-auditor ─── tracker
 
 All database IDs are in `profile-context.yaml` and `MEMORY.md`.
 
+### Notion Query Patterns
+
+**Content Bank writes** — use `data_source_id`, NOT `database_id`:
+```
+parent: { data_source_id: "f295698f-ca84-4d74-b06f-b74afa1cc96c" }
+properties:
+  Title: "..."        # NOT "Name" — will fail with "Property not found"
+  Type: "Post"        # case-sensitive select
+  Pillar: "Clinical Cases"
+  Status: "Draft"
+  Language: "English"
+```
+
+**Universita Hub reads** — use `data_source_url` with `collection://` prefix for search:
+```
+notion-search: data_source_url: "collection://2c378459-4db3-4245-8439-88b9cd682b1e"
+```
+Do NOT use `notion-fetch` with `collection://` URLs — it returns schema, not records.
+
+## Automation Layer
+
+### Hooks (auto-enforced via `~/.claude/settings.json`)
+
+| Hook | Type | Trigger | Action |
+|---|---|---|---|
+| LinkedIn Write Guard | PreToolUse | Playwright write tools + "linkedin" in input | **Blocks** the action — browser is READ-ONLY |
+| Notion Write Reminder | PostToolUse | Notion create-pages / update-page | Suggests `/notion-sync check` for Content Bank writes |
+
+### Skills
+| Skill | Location | Purpose |
+|---|---|---|
+| `linkedin-optimize` | `~/.claude/skills/linkedin-optimize/SKILL.md` | Main 10-command optimizer |
+| `cv-data` | `~/.claude/skills/cv-data/SKILL.md` | Universita Hub data extraction |
+| `content-bank` | `~/.claude/skills/content-bank/SKILL.md` | Content Bank writes with schema validation |
+| `notion-sync` | `~/.claude/skills/notion-sync/SKILL.md` | Metrics freshness audit |
+
+### Subagent
+| Agent | Location | Purpose |
+|---|---|---|
+| Medical Vocabulary Checker | `~/.claude/agents/medical-vocabulary-checker.md` | Validates clinical vocabulary against Medical Lexicon DB (58 records) |
+
 ## MCP Tools Used
 
 - **Notion MCP** — read/write all 10 databases (fetch, create-pages, update-page, search)
@@ -76,7 +131,7 @@ All database IDs are in `profile-context.yaml` and `MEMORY.md`.
 
 ## Safety Rules
 
-1. **Browser is READ-ONLY** — never modify LinkedIn directly (no edit, save, post, send)
+1. **Browser is READ-ONLY** — never modify LinkedIn directly (no edit, save, post, send). Enforced by PreToolUse hook.
 2. **All content is DRAFT** — user reviews and publishes manually
 3. **Never enter credentials** — if login needed, ask user
 4. **Never automate** connection requests, messages, or posts
@@ -96,9 +151,21 @@ When saving to Content Bank (`f295698f-ca84-4d74-b06f-b74afa1cc96c`):
 ## Git
 
 Repository root: `~/Desktop/` (sparse-checkout includes `Linkedin/linkedin-optimizer/`).
-Pre-commit hook requires: `PRE_COMMIT_ALLOW_NO_CONFIG=1` prefix for commits.
+Remote: `origin` → `github.com/Sergei2912/cz-career-architect.git`
+
+```bash
+# Commits require PRE_COMMIT_ALLOW_NO_CONFIG=1 prefix
+PRE_COMMIT_ALLOW_NO_CONFIG=1 git -C ~/Desktop commit -m "message"
+
+# All git commands use -C ~/Desktop since repo root ≠ project dir
+git -C ~/Desktop status -- "Linkedin/"
+git -C ~/Desktop diff -- "Linkedin/"
+git -C ~/Desktop log --oneline -10 -- "Linkedin/"
+git -C ~/Desktop add Linkedin/linkedin-optimizer/path/to/file
+```
 
 ## Related Config Files
 
 - `~/.claude/skills/linkedin-optimize/SKILL.md` — full skill definition (10 commands)
 - `~/.claude/projects/-Users-sssssaaaaa-Desktop-Linkedin/memory/MEMORY.md` — project memory (architecture, all DB IDs)
+- `.claude/settings.local.json` — project-level MCP tool permissions
