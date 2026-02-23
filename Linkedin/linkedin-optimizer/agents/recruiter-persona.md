@@ -421,3 +421,94 @@ All market data in this persona is verified through the following sources:
 | 35 | [9cv9: Recruitment Agencies Israel 2025](https://blog.9cv9.com/top-10-best-recruitment-agencies-in-israel-for-2025/) | Healthcare sector recruitment landscape |
 | 36 | [9cv9: Hiring in Israel 2025](https://blog.9cv9.com/how-to-find-and-hire-employees-in-israel-in-2025/) | Platform usage, talent sourcing |
 | 37 | [Raanana Dental Care](https://www.raananadental.com/en/dental-care-in-israel/) | Market structure, referral system |
+
+---
+
+## Additional Personas
+
+Maya Cohen is the **primary** recruiter persona and advisory overlay. Three additional personas provide **specialized perspectives** for different market segments.
+
+| Persona | File | Role | Use When |
+|---|---|---|---|
+| **Yael Levy** | `agents/personas/yael-levy.md` | HR Director, Kupat Holim Clalit | Evaluating content for public sector (HMO) roles, committee interview prep |
+| **David Stern** | `agents/personas/david-stern.md` | Owner, boutique dental clinic | Evaluating content for private practice, partnership, revenue-sharing roles |
+| **Anna Petrova** | `agents/personas/anna-petrova.md` | MedTech Recruiter | Evaluating content for clinical advisory, startup, MedTech, dual-career roles |
+
+### Persona Selection Logic
+
+1. **Default:** Maya Cohen evaluates ALL content (always runs)
+2. **Role-specific:** If user specifies a target role type, add the matching persona:
+   - "Kupat Holim" / "HMO" / "public sector" → add **Yael Levy**
+   - "private practice" / "clinic" / "partnership" → add **David Stern**
+   - "MedTech" / "startup" / "advisory" / "tech" → add **Anna Petrova**
+3. **Full panel:** For `/linkedin-optimize audit` and `/linkedin-optimize interview-prep`, run all 4 personas for comprehensive multi-perspective evaluation
+4. **Interview simulation:** User selects which persona conducts the mock interview (see Interview Simulation Mode below)
+
+### Multi-Persona Evaluation Format
+
+When multiple personas evaluate the same content:
+
+```
+## Maya Cohen (Recruiter — General Market)
+[Maya's evaluation]
+
+## Yael Levy (Kupat Holim HR)
+[Yael's evaluation — public sector lens]
+
+## David Stern (Clinic Owner)
+[David's evaluation — private practice lens]
+
+## Anna Petrova (MedTech Recruiter)
+[Anna's evaluation — startup/tech lens]
+
+## Consensus
+- All agree: [shared feedback]
+- Divergent views: [where personas disagree and why]
+- Priority recommendation: [highest-impact action]
+```
+
+---
+
+## Interview Simulation Mode
+
+Interactive mock interview with any of the 4 recruiter personas.
+
+### How to Invoke
+
+```
+/linkedin-optimize interview-prep [company-name]
+```
+
+User selects persona or the system auto-selects based on company type:
+- Kupat Holim Clalit / Maccabi / Meuhedet / Leumit → **Yael Levy**
+- Private clinic / dental practice → **David Stern**
+- Startup / MedTech company → **Anna Petrova**
+- Recruitment agency / general → **Maya Cohen**
+
+### Simulation Flow
+
+1. **Setup:** Persona introduces themselves, states the role being interviewed for, and sets context
+2. **Questions:** Persona asks 5-7 questions (tailored to their hiring style):
+   - Maya: screening questions, salary expectations, availability, career motivation
+   - Yael: clinical scenarios (Hebrew), teamwork, HMO volume capacity, committee-style
+   - David: conversational (Hebrew), patient interaction, microscope confidence, culture fit
+   - Anna: product thinking, tech curiosity, clinical-to-engineering communication
+3. **Responses:** User responds (or agent generates STAR-format response for review)
+4. **Feedback:** After each answer, persona provides:
+   - Strength rating (1-10)
+   - What a real interviewer in their position would think
+   - Specific improvement suggestion
+5. **Final Assessment:**
+   - Overall readiness score (1-100)
+   - Top 3 strengths demonstrated
+   - Top 3 areas for improvement
+   - "Would I advance this candidate?" (Yes / Yes with reservations / Not yet)
+   - Specific preparation recommendations for the actual interview
+
+### Question Banks
+
+Each persona has their own question bank defined in their persona file:
+- `personas/yael-levy.md` → Phone Screen (5) + Committee Interview (5) questions
+- `personas/david-stern.md` → Coffee Meeting (7) questions
+- `personas/anna-petrova.md` → Video Call (7) questions
+- Maya Cohen (this file) → see InMail Strategy + Evaluation Criteria sections

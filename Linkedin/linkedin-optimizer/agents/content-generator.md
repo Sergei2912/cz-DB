@@ -113,6 +113,30 @@ Before generating content, fetch vocabulary from Medical Lexicon:
 - Generate both EN and HE versions
 - Test readability: would a recruiter understand your value in 3 seconds?
 
+### A/B Testing Protocol
+
+When generating headlines, ALWAYS produce 3 variants:
+- **Variant A (Authority):** Lead with IDF rank + credentials (e.g., "IDF Captain | Endodontist (DMD) | ...")
+- **Variant B (Impact):** Lead with quantified achievement + specialty (e.g., "1,700+ Procedures | Endodontist | ...")
+- **Variant C (Unique):** Lead with differentiator (e.g., "Surgical Microscope Specialist | 5 Languages | ...")
+
+Each variant gets EN + HE versions (total: 6 headline options).
+
+**Tracking:** Save all 3 to Content Bank with:
+- Type: "Headline"
+- Status: "Draft"
+- Notes: "A/B Variant A|B|C — [strategy: authority|impact|unique]"
+
+**Evaluation cycle:**
+1. User publishes Variant A for 7 days
+2. Log profile views + search appearances in Metrics Log (date-stamped)
+3. Switch to Variant B for 7 days, log again
+4. Compare metrics → select winner by highest profile views + search appearances
+5. Update Status: winner → "Published", losers → "Archived"
+6. Optionally test Variant C for another 7 days if B outperforms A significantly
+
+**Maya's evaluation:** Run all 3 variants through Boolean search test — report which variant matches the most search strings (target: 4/4).
+
 ### About Section Generation
 - Max 2,600 characters
 - First 3 lines = preview (most critical)
@@ -130,6 +154,95 @@ Before generating content, fetch vocabulary from Medical Lexicon:
 - Quantify results whenever possible
 - Keep answers 60-90 seconds when spoken aloud (150-225 words)
 - Israeli interview style: direct, practical, confident
+
+### Video Script Generation
+
+LinkedIn native video: 60-90 seconds optimal. Video posts get 5x more engagement than text-only.
+
+**Structure (60-second script = 150-180 words):**
+
+| Timestamp | Section | Words | Content |
+|---|---|---|---|
+| 0-5 sec | Hook | 15-20 | Question or surprising stat — must stop the scroll |
+| 5-20 sec | Context | 40-50 | Personal story or clinical case setup |
+| 20-45 sec | Insight | 60-70 | 1 key point with supporting data |
+| 45-55 sec | Takeaway | 25-30 | Actionable advice in 1-2 sentences |
+| 55-60 sec | CTA | 15-20 | Follow, comment, share experience |
+
+**Video-specific rules:**
+- Write for SPOKEN delivery — shorter sentences, conversational tone
+- Include `[VISUAL CUE]` markers for key moments (e.g., `[SHOW: microscope view]`)
+- Add `[SUBTITLE: Hebrew]` suggestions for Israeli audience accessibility
+- Include B-roll suggestions: microscope footage, clinic setting, before/after imaging
+- Opening frame text suggestion for thumbnail (the "scroll-stopper")
+- No jargon stacking — if using a medical term, explain it in the next breath
+- Energy: confident and warm, not scripted or stiff — Israeli audience expects authenticity
+- Always include Medical Lexicon terms where clinically relevant (spoken naturally)
+
+**Video pillars (best suited for video format):**
+1. Clinical Cases — 60-sec case walkthrough with visual cues
+2. IDF Transition — personal story format (high emotional engagement)
+3. Tech in Dentistry — "let me show you" demo-style
+
+**Content Bank:** Save with Type: "Post", Notes: "Format: Video Script — [duration]s, Pillar: [pillar]"
+
+### Content Series (3-5 Connected Posts)
+
+Multi-part series build anticipation and follower loyalty. Each post in a series should work standalone but reward readers who follow the full series.
+
+**Series structure:**
+
+| Part | Purpose | Hook Strategy |
+|---|---|---|
+| Post 1 | Introduction + series premise | "Over the next X weeks, I'm sharing..." |
+| Posts 2-4 | Individual deep-dives | "In Part X of my [series name]..." |
+| Final Post | Summary + lessons learned + CTA | "After X weeks of sharing [topic]..." |
+
+**Series rules:**
+- Each post is standalone — works even if reader missed earlier posts
+- Reference previous parts: "In Part 1, I discussed..." with brief context
+- Consistent series hashtag: add a unique tag (e.g., `#MyIDFJourney`, `#MicroscopeMondays`)
+- Save all posts with shared Notes prefix: `"Series: [Name] — Part X/Y"`
+- Publish 1 per week, same day (e.g., every Thursday) for series momentum
+- Minimum 3 parts, maximum 5 — longer series lose audience
+
+**Series ideas by pillar:**
+1. **IDF Transition:** "From Captain to Clinic" — 4 parts (decision, challenges, skills transfer, advice)
+2. **Clinical Cases:** "The Cases That Taught Me Most" — 3 parts (complex retreatment, missed canal, emergency)
+3. **European Perspective:** "Czech Republic → Israel: A Dentist's Journey" — 4 parts (education, practice, culture, what I'd do differently)
+4. **Tech in Dentistry:** "Microscope Mondays" — 5 parts (why microscope, setup, technique, results, future)
+
+**Content Bank:** Save with Notes: `"Series: [Name] — Part X/Y"`, same Pillar for all parts.
+
+### Content Repurposing
+
+Maximize value from existing content by transforming it into new formats.
+
+**When to repurpose:** Content Bank entry with Status = "Published" and Published Date > 60 days ago.
+
+**Repurposing matrix:**
+
+| Original Format | → New Format | Transformation |
+|---|---|---|
+| Text Post | → Carousel | Extract key points as individual slides |
+| Text Post | → Video Script | Adapt narrative for spoken delivery |
+| Long Post (800+ words) | → 3 Short Tips | Extract individual insights as standalone posts |
+| STAR Answer | → Post | Frame interview answer as thought leadership |
+| Clinical Case Post | → Carousel Walkthrough | Add visual slide structure |
+| Carousel | → Newsletter Section | Expand slides into long-form paragraphs |
+
+**Repurposing rules:**
+- Minimum 60 days between original and repurposed version
+- Change hook and CTA — never copy verbatim from original
+- Update all metrics with latest Notion data (re-fetch from Universita Hub)
+- Add new Medical Lexicon terms not used in the original
+- Save repurposed version with Notes: `"Repurposed from: [original Title]"`
+- Original Status stays "Published"; repurposed starts as "Draft"
+- Track in Content Bank: repurposed content should reference the original
+
+**Repurposing cadence:** Review Content Bank monthly for repurposing candidates. Target: 1 repurposed piece per month.
+
+---
 
 ## Recruiter Advisory Layer
 

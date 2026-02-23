@@ -40,6 +40,20 @@ data_sources:
       - '("endodontist" OR "endodontics") AND ("surgical microscope" OR "מיקרוסקופ") AND ("Israel")'
       - '("IDF" OR "צה״ל" OR "Medical Corps" OR "חיל רפואה") AND ("dentist" OR "dental" OR "רופא שיניים")'
       - '("endodontist" OR "endodontics") AND ("DMD" OR "DDS") AND ("Israel" OR "relocation" OR "aliyah")'
+    # Additional recruiter personas — different market perspectives
+    additional_personas:
+      - file: "agents/personas/yael-levy.md"
+        name: "Yael Levy"
+        role: "HR Director, Kupat Holim Clalit"
+        use_for: "Public sector roles, HMO positions, Kupat Holim hiring"
+      - file: "agents/personas/david-stern.md"
+        name: "David Stern"
+        role: "Clinic Owner, boutique practice"
+        use_for: "Private practice, partnership opportunities, revenue-sharing roles"
+      - file: "agents/personas/anna-petrova.md"
+        name: "Anna Petrova"
+        role: "MedTech Recruiter"
+        use_for: "Clinical advisory, MedTech roles, startup positions, dual career"
 
 # ─── IDENTITY ────────────────────────────────────────────────────────────
 identity:
@@ -155,6 +169,37 @@ keywords:
       - "ירושלים"
       - "מרכז"
 
+# ─── HASHTAG STRATEGY ───────────────────────────────────────────────────
+hashtags:
+  primary_en:  # use in every post
+    - "#Endodontics"
+    - "#DentalSurgeon"
+    - "#IsraelHealthcare"
+  secondary_en:  # rotate 2-3 per post
+    - "#SurgicalMicroscope"
+    - "#RootCanalTreatment"
+    - "#DentalTechnology"
+    - "#IDFVeterans"
+    - "#MedTech"
+    - "#DigitalDentistry"
+  primary_he:  # use when HE content or bilingual
+    - "#אנדודונטיה"
+    - "#רפואתשיניים"
+    - "#ישראל"
+  secondary_he:
+    - "#צהל"
+    - "#מיקרוסקופכירורגי"
+    - "#בריאותהפה"
+  niche:  # use for specific pillars
+    - "#CBCT"
+    - "#NiTiFiles"
+    - "#DentalMicroscopy"
+    - "#ClinicalCases"
+  rules:
+    total_per_post: "3-5"
+    mix: "2 EN primary + 1-2 EN secondary + 1 HE"
+    pillar_specific: "Add 1 niche hashtag matching the pillar"
+
 content_pillars:
   - id: clinical_cases
     label: "Clinical Case Studies"
@@ -195,6 +240,50 @@ content_pillars:
     examples:
       - "Cultural competence in serving Israel's Russian-speaking community"
       - "Bridging language gaps in dental care"
+
+# ─── SEASONAL CONTENT CALENDAR ──────────────────────────────────────────
+seasonal_calendar:
+  # Israeli calendar events mapped to content pillars
+  - event: "Yom HaZikaron"
+    date_range: "April-May (varies by Hebrew calendar)"
+    pillar: "IDF Transition"
+    content_angle: "IDF service reflection, veteran leadership, remembrance"
+    priority: "high"
+  - event: "Yom HaAtzmaut"
+    date_range: "April-May (day after Yom HaZikaron)"
+    pillar: "IDF Transition"
+    content_angle: "Building Israel's healthcare, national contribution through service"
+    priority: "medium"
+  - event: "Post-IDF Release Cycle"
+    date_range: "July-August"
+    pillar: "IDF Transition"
+    content_angle: "Career transition advice for newly released soldiers"
+    priority: "high"
+  - event: "Academic Year Start"
+    date_range: "October"
+    pillar: "Clinical Cases"
+    content_angle: "Dental education, mentoring new residents, clinical teaching"
+    priority: "medium"
+  - event: "International Dental Day"
+    date_range: "March 6"
+    pillar: "Clinical Cases"
+    content_angle: "Public dental health awareness, community dentistry"
+    priority: "medium"
+  - event: "Medical Innovation Week Israel"
+    date_range: "varies"
+    pillar: "Tech in Dentistry"
+    content_angle: "Israeli MedTech innovation, dental technology showcase"
+    priority: "medium"
+  - event: "Aliyah Anniversary"
+    date_range: "personal"
+    pillar: "European Perspective"
+    content_angle: "Integration journey, cross-cultural practice, lessons learned"
+    priority: "low"
+  - event: "Russian New Year"
+    date_range: "December 31 - January 1"
+    pillar: "Russian Patients"
+    content_angle: "Community connection, cultural bridge, serving diverse patients"
+    priority: "low"
 
 weekly_rhythm:
   sunday:
@@ -288,3 +377,71 @@ optimization_status:
   posts_this_week: 0
   last_audit_date: null
   last_metrics_check: null
+
+# ─── POSTING SCHEDULE ───────────────────────────────────────────────────
+posting_schedule:
+  # Optimal times for Israeli audience (IST = UTC+2/+3)
+  best_days: ["Sunday", "Thursday"]  # Israeli business week start + mid
+  best_times:
+    morning: "08:00-09:00 IST"    # commute time
+    lunch: "12:00-13:00 IST"      # lunch break scrolling
+    evening: "18:00-19:00 IST"    # post-work wind-down
+  avoid: ["Friday", "Saturday"]    # Shabbat — very low engagement
+  timezone: "Asia/Jerusalem"
+  notes: "Sunday morning = highest Israeli LinkedIn activity of the week"
+
+# ─── ENGAGEMENT TARGETS ─────────────────────────────────────────────────
+engagement_targets:
+  weekly:
+    connections_sent: 10
+    posts_published: 1
+    comments_written: 10
+    likes_given: 15
+    inmails_sent: 2
+  monthly:
+    posts_published: 4
+    new_connections: 40
+    profile_views_target: 100
+    search_appearances_target: 50
+    content_bank_entries: 6
+  daily:
+    likes_comments: 3           # minimum daily interactions (Sun-Thu)
+    time_on_platform_min: 15    # minimum minutes
+
+# ─── GROWTH MILESTONES ──────────────────────────────────────────────────
+growth_milestones:
+  connections:
+    - threshold: 50
+      label: "Starter"
+      unlocks: "Basic credibility, profile looks active"
+    - threshold: 100
+      label: "Visible"
+      unlocks: "Appear in more searches, 2nd degree network grows"
+    - threshold: 250
+      label: "Networked"
+      unlocks: "2nd degree reach to most Israeli dental professionals"
+    - threshold: 500
+      label: "Established"
+      unlocks: "500+ badge displayed, full search visibility"
+      priority: "high"
+    - threshold: 1000
+      label: "Authority"
+      unlocks: "Thought leader positioning, top 1% dental network"
+  engagement:
+    - metric: "profile_views_weekly"
+      threshold: 50
+      label: "On the Radar"
+    - metric: "profile_views_weekly"
+      threshold: 150
+      label: "High Visibility"
+    - metric: "search_appearances_weekly"
+      threshold: 100
+      label: "Search Optimized"
+    - metric: "posts_engagement_rate"
+      threshold: 3.0
+      label: "Engaging Content"
+      description: "3%+ engagement = top 10% of LinkedIn posters"
+    - metric: "ssi_score"
+      threshold: 70
+      label: "Social Selling Pro"
+      description: "SSI ≥70 = top 5% in your industry"

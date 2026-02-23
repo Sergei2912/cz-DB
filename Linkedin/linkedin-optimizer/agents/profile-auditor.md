@@ -144,9 +144,112 @@ After completing sections 1-7, run the **Recruiter Persona evaluation** from `ag
 
 ---
 
+### 9. SSI Score (Social Selling Index)
+
+Navigate to `linkedin.com/sales/ssi` via browser (**READ-ONLY**).
+
+Parse the 4 SSI components from the page:
+
+| Component | Range | What It Measures |
+|---|---|---|
+| Establishing your professional brand | 0-25 | Profile completeness, content publishing, engagement received |
+| Finding the right people | 0-25 | Search usage, profile views of decision-makers |
+| Engaging with insights | 0-25 | Content sharing, commenting, group participation |
+| Building relationships | 0-25 | Connection acceptance rate, network growth, senior connections |
+
+**Total SSI:** 0-100 (sum of 4 components)
+
+**Also capture from the SSI page:**
+- Industry SSI average (shown as comparison bar)
+- Network SSI average (shown as comparison bar)
+
+**Scoring:**
+- SSI ≥ 70 = ✅ Excellent (top 10% of industry)
+- SSI 50-69 = ⚠️ Good (above average, room for growth)
+- SSI < 50 = ❌ Below average (priority improvement area)
+
+**Per-component flags:**
+- Any component < 10 = ❌ Critical gap — include specific improvement action
+- Any component < 15 = ⚠️ Below average — suggest targeted action
+
+**Log to Metrics Log** (`bcec5092-ca2e-4764-9763-e727b1ffb18b`) with properties:
+- SSI Total (number)
+- SSI Brand (number)
+- SSI People (number)
+- SSI Insights (number)
+- SSI Relationships (number)
+
+**Note:** SSI page requires LinkedIn login. If not logged in, skip this section and note "SSI unavailable — login required" in the audit report.
+
+---
+
+### 10. Multi-Persona Assessment
+
+After completing sections 1-9, optionally run assessments from additional personas:
+
+| Persona | File | When to Include |
+|---|---|---|
+| Maya Cohen | `agents/recruiter-persona.md` | **Always** (primary advisor) |
+| Yael Levy | `agents/personas/yael-levy.md` | When targeting Kupat Holim / public sector roles |
+| David Stern | `agents/personas/david-stern.md` | When targeting private practice / partnership roles |
+| Anna Petrova | `agents/personas/anna-petrova.md` | When targeting MedTech / clinical advisory roles |
+
+For `/linkedin-optimize audit` — always include Maya. Include others if user specifies role type or if running `full-refresh`.
+
+For `/linkedin-optimize interview-prep [company]` — auto-select persona based on company type.
+
+---
+
+## Audit History
+
+After every audit, save scores to the **Audit History** Notion database for trend tracking.
+
+### Audit History Database
+
+| Property | Type | Description |
+|---|---|---|
+| Date | date | Audit date |
+| Overall Score | number | 0-100 composite score |
+| Tier | select | A / B / C / D |
+| First Impression | number | Section 1 score (0-10) |
+| Headline | number | Section 2 score (0-10) |
+| About | number | Section 3 score (0-10) |
+| Experience | number | Section 4 score (0-10) |
+| Skills | number | Section 5 score (0-10) |
+| Activity | number | Section 6 score (0-10) |
+| Network | number | Section 7 score (0-10) |
+| Recruiter Visibility | number | Section 8 score (0-10) |
+| SSI Total | number | Section 9 SSI score (0-100) |
+| Boolean Match | number | X/4 Boolean strings matched |
+| Top Priorities | rich_text | Top 3 improvement priorities |
+| Notes | rich_text | Additional auditor notes |
+
+### Delta Reporting
+
+On subsequent audits, fetch the **most recent Audit History entry** and show deltas:
+
+```
+## Score Comparison (vs previous audit on [date])
+| Section | Previous | Current | Delta |
+|---|---|---|---|
+| Overall | 62 | 71 | +9 ↑ |
+| Headline | 5 | 8 | +3 ↑ |
+| About | 7 | 7 | 0 → |
+| SSI Total | — | 55 | NEW |
+| ... | | | |
+
+**Tier Change:** C → B ↑
+**Biggest Improvement:** Headline (+3)
+**Needs Attention:** Activity (unchanged or declined)
+```
+
+If no previous audit exists, note "First audit — baseline established" and skip delta.
+
+---
+
 ## Scoring
-- Rate each section 0-10 (sections 1-7 = standard audit, section 8 = recruiter overlay)
-- Calculate overall score 0-100
+- Rate each section 0-10 (sections 1-8 = standard audit, section 9 = SSI overlay)
+- Calculate overall score 0-100 (weighted: sections 1-8 = 10 pts each = 80 pts, section 9 SSI = 20 pts scaled from 0-100 to 0-20)
 - Classify: Needs Work (0-40) | Good (41-70) | Excellent (71-100)
 
 ## Output Format
@@ -155,18 +258,21 @@ After completing sections 1-7, run the **Recruiter Persona evaluation** from `ag
 **Date:** [date]
 **Overall Score:** [X]/100 — [classification]
 **Recruiter Tier:** [A/B/C/D] — [Maya's one-line assessment]
+**SSI Score:** [X]/100 (Brand: X | People: X | Insights: X | Relationships: X)
+**Delta vs Previous:** [+/-X] [↑↗→↘↓] (or "First audit — baseline")
 
 ## Section Scores
-| Section | Score | Key Issues |
-|---|---|---|
-| First Impression | X/10 | ... |
-| Headline | X/10 | ... |
-| About | X/10 | ... |
-| Experience | X/10 | ... |
-| Skills | X/10 | ... |
-| Activity | X/10 | ... |
-| Network | X/10 | ... |
-| Recruiter Visibility | X/10 | ... |
+| Section | Score | Delta | Key Issues |
+|---|---|---|---|
+| First Impression | X/10 | +/-X | ... |
+| Headline | X/10 | +/-X | ... |
+| About | X/10 | +/-X | ... |
+| Experience | X/10 | +/-X | ... |
+| Skills | X/10 | +/-X | ... |
+| Activity | X/10 | +/-X | ... |
+| Network | X/10 | +/-X | ... |
+| Recruiter Visibility | X/10 | +/-X | ... |
+| SSI (scaled) | X/20 | +/-X | ... |
 
 ## Recruiter Persona Assessment
 **Tier:** [A/B/C/D]
@@ -184,3 +290,9 @@ After completing sections 1-7, run the **Recruiter Persona evaluation** from `ag
 ## Detailed Recommendations
 [Section-by-section actionable items including recruiter-specific suggestions]
 ```
+
+## Post-Audit Actions
+
+1. **Save to Audit History** — create new entry in Audit History DB with all section scores
+2. **Update Metrics Log** — log SSI scores if captured
+3. **Suggest next audit** — recommend re-audit in 2-4 weeks depending on changes planned
