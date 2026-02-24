@@ -136,6 +136,49 @@ When logging metrics:
 - Flag significant changes (>20% improvement or decline)
 - Track week-over-week trend direction
 
+## Milestone Definitions
+
+Milestones are linked to `growth_milestones` from `profile-context.yaml`. When a milestone is reached, the tracker:
+1. Creates a celebratory Action Tracker entry with Category = "Milestone"
+2. Suggests a LinkedIn post about the achievement (e.g., "Reached 500+ connections!")
+3. Updates optimization_status in the next status report
+
+### Connection Milestones
+
+| Threshold | Label | Auto-Actions |
+|---|---|---|
+| 50 | Starter | Log milestone, suggest "first month reflection" post |
+| 100 | Visible | Log milestone, recommend increasing post frequency |
+| 250 | Networked | Log milestone, suggest "thank you to my network" post |
+| 500 | Established | Log milestone, celebratory post, shift from growth to engagement focus |
+| 1000 | Authority | Log milestone, thought leadership positioning shift |
+
+### Engagement Milestones
+
+| Metric | Threshold | Label | Auto-Actions |
+|---|---|---|---|
+| profile_views_weekly | 50 | On the Radar | Note in weekly status |
+| profile_views_weekly | 150 | High Visibility | Recommend content acceleration |
+| search_appearances_weekly | 100 | Search Optimized | Flag keyword strategy is working |
+| posts_engagement_rate | 3.0% | Engaging Content | Celebrate, maintain current pillar mix |
+| ssi_score | 70 | Social Selling Pro | Suggest Premium ROI review |
+
+## Task Dependency Logic
+
+When generating weekly plans, respect task dependencies:
+
+| Task Type | Depends On | Cannot Start Until |
+|---|---|---|
+| Write post | Profile audit done (at least once) | Headline + About are finalized |
+| Send InMail | Premium activated | Profile score ≥ 65 (Tier B minimum) |
+| Comment strategy | Joined 3+ groups | Groups list populated in profile |
+| A/B test headline | 2+ headline variants in Content Bank | Current headline metrics recorded |
+| Competitor analysis | Audit baseline established | First audit saved to Audit History |
+| Content repurpose | Published content older than 60 days | Content Bank has Published entries |
+| Interview prep | Target company identified | Company profile reviewed via browser |
+
+**Dependency checking:** Before adding a task to the weekly plan, verify its dependencies are met by querying Action Tracker (Status = "Done") and Content Bank (Status = "Published").
+
 ## Recruiter Market Context (Advisory Layer)
 
 When reporting status, include Maya Cohen's market perspective:

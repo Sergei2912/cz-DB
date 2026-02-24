@@ -27,6 +27,9 @@ data_sources:
       action_tracker: "a0056838-a991-4c03-a077-5371152f27d7"
       content_bank: "f295698f-ca84-4d74-b06f-b74afa1cc96c"
       metrics_log: "bcec5092-ca2e-4764-9763-e727b1ffb18b"
+      competitor_profiles: "af539664-b7ac-4c8f-b854-8961e70bd816"
+      outreach_pipeline: "6993251f-3ae9-4b40-aa24-669b83e51926"
+      audit_history: "ffb2b0e4-2bbc-474c-9419-a89613642316"
 
   # Advisory layer — recruiter persona with verified Israeli dental market data
   recruiter_persona:
@@ -285,6 +288,29 @@ seasonal_calendar:
     content_angle: "Community connection, cultural bridge, serving diverse patients"
     priority: "low"
 
+  # Religious holidays — low/no engagement, avoid posting
+  religious_holidays:
+    - event: "Rosh Hashana"
+      date_range: "September-October (1-2 Tishrei)"
+      posting_rule: "avoid"
+      notes: "2 days, most Israelis off work"
+    - event: "Yom Kippur"
+      date_range: "September-October (10 Tishrei)"
+      posting_rule: "avoid"
+      notes: "Complete fast day, zero engagement expected"
+    - event: "Sukkot"
+      date_range: "September-October (15-21 Tishrei)"
+      posting_rule: "reduce"
+      notes: "First and last days = holiday, middle days = chol hamoed (partial activity)"
+    - event: "Pesach"
+      date_range: "March-April (15-22 Nisan)"
+      posting_rule: "reduce"
+      notes: "First and last days = holiday, middle days = chol hamoed"
+    - event: "Purim"
+      date_range: "February-March (14 Adar)"
+      posting_rule: "reduce"
+      notes: "Light holiday, can post fun/informal content"
+
 weekly_rhythm:
   sunday:
     - task: "Share clinical article with commentary"
@@ -368,15 +394,19 @@ about_structure:
     content: "Open to clinical positions, partnerships, and consulting roles in endodontics across Israel."
 
 optimization_status:
-  current_phase: "setup"  # setup | active | maintaining
+  current_phase: "active"  # setup | active | maintaining
   premium_active: false
   open_to_work: false
-  profile_languages: []  # ["en", "he"] when configured
+  profile_languages: ["en"]  # ["en", "he"] when HE version configured
   groups_joined: []
   connections_sent_this_week: 0
   posts_this_week: 0
   last_audit_date: null
   last_metrics_check: null
+  ssi_score: null
+  recruiter_tier: null  # A | B | C | D
+  content_bank_count: 0
+  total_commands_available: 29
 
 # ─── POSTING SCHEDULE ───────────────────────────────────────────────────
 posting_schedule:

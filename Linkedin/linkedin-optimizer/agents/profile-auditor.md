@@ -181,6 +181,30 @@ Parse the 4 SSI components from the page:
 
 **Note:** SSI page requires LinkedIn login. If not logged in, skip this section and note "SSI unavailable — login required" in the audit report.
 
+**SSI Calculation Formula (when manual estimation needed):**
+
+Each pillar is estimated on 0-25 scale:
+
+| Pillar | Key Signals | Scoring |
+|---|---|---|
+| Professional Brand (0-25) | Profile 100% complete = 10, Published 1+ post/week = 8, Engagement received avg > 5 = 7 |
+| Finding People (0-25) | Used search 5+ times/week = 10, Viewed 10+ profiles/week = 8, Saved 3+ leads = 7 |
+| Engaging Insights (0-25) | Commented on 10+ posts/week = 10, Shared 2+ articles/week = 8, Active in 3+ groups = 7 |
+| Building Relationships (0-25) | Acceptance rate > 40% = 10, 20+ new connections/month = 8, Messaged 5+ contacts/week = 7 |
+
+**Multilingual Version Check:**
+
+For Israeli market optimization, verify BOTH language versions exist:
+
+| Element | English Version | Hebrew Version | Status |
+|---|---|---|---|
+| Headline | Check EN headline present | Check HE headline present | ✅ Both / ⚠️ EN only / ❌ Neither |
+| About Section | Check EN about present | Check HE about present | ✅ Both / ⚠️ EN only / ❌ Neither |
+| Experience titles | EN position titles | HE position titles | ✅ Both / ⚠️ EN only |
+| Skills | EN skill names | HE equivalents on profile | ✅ Both / ⚠️ EN only |
+
+**Flag as HIGH PRIORITY** if only English version exists — missing Hebrew significantly reduces Israeli recruiter visibility.
+
 ---
 
 ### 10. Multi-Persona Assessment

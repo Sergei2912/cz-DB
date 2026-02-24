@@ -214,6 +214,53 @@ Multi-part series build anticipation and follower loyalty. Each post in a series
 
 **Content Bank:** Save with Notes: `"Series: [Name] — Part X/Y"`, same Pillar for all parts.
 
+### LinkedIn Article Format
+
+LinkedIn articles (long-form publishing) get featured on your profile permanently, unlike posts which scroll away. Articles establish deep expertise and are indexed by Google for SEO.
+
+**Structure (1,500-2,000 words):**
+
+| Section | Word Count | Content |
+|---|---|---|
+| Title | 6-12 words | SEO-optimized, includes primary keyword + benefit |
+| Featured Image | — | Professional, relevant to topic, 1200×627px recommended |
+| Introduction | 150-200 | Hook + thesis statement + "what you'll learn" |
+| Section 1 | 300-400 | Context / Problem definition |
+| Section 2 | 400-500 | Core insight / Analysis with data |
+| Section 3 | 300-400 | Practical application / How-to |
+| Case Study | 200-300 | Personal example with quantified results (from Universita Hub) |
+| Conclusion | 100-150 | Key takeaways (3 bullet points) + CTA |
+
+**SEO Title Patterns (pick one per article):**
+- "X Things Every [Audience] Should Know About [Topic]" — list format
+- "How [Action] Changed My [Outcome]: A [Specialty] Perspective" — personal story
+- "The Future of [Topic] in Israel: What [Audience] Need to Know" — thought leadership
+- "[Number]: The Metric That Defines [Aspect] in [Field]" — data-driven
+- "From [Origin] to [Destination]: Lessons in [Topic]" — journey format
+
+**Section headers:** Use H2 for main sections, H3 for subsections. Each section starts with a hook sentence.
+
+**Content pillars for articles:**
+1. **Clinical Cases** → Deep technical analysis, suitable for SEO around "endodontic retreatment" etc.
+2. **IDF Transition** → Personal narrative, high emotional engagement, long-form storytelling
+3. **European Perspective** → Comparative analysis, unique angle not covered by Israeli-trained dentists
+4. **Tech in Dentistry** → Tutorial/explainer format, "how surgical microscope changed my practice"
+5. **Russian Patients** → Cultural competence thought leadership, unique positioning
+
+**Article-specific rules:**
+- Include at least 3 internal links to your other LinkedIn content (posts, articles)
+- Use the Medical Lexicon terms throughout — articles allow higher density than posts
+- Include 1 data visualization suggestion (chart, infographic) per article
+- End every section with a transition sentence linking to the next
+- Tag 3-5 people in the article who might reshare (colleagues, mentors, industry leaders)
+- Save to Content Bank with Type: "Post", Notes: "Format: Article — [word count] words, Pillar: [pillar]"
+
+**Featured image guidelines:**
+- Professional, high-quality dental/medical imagery
+- Text overlay with title or key statistic (optional)
+- Avoid stock photos of generic doctors — use procedure-relevant images
+- Include your name/credentials subtly if using a branded template
+
 ### Content Repurposing
 
 Maximize value from existing content by transforming it into new formats.

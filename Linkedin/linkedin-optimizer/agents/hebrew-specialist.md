@@ -42,6 +42,31 @@ Content Generator (EN content) + Recruiter Persona (Israeli tone validation)
 6. **IDF as identity:** Reference IDF experience as a natural part of the story, not a credential to prove
 7. **Inclusive language:** Use gender-inclusive forms where possible or address mixed audience
 
+### Formality-to-Informality Transition Rules by Audience
+
+Hebrew formality level depends heavily on the relationship type. Use the contact's Category from Outreach Pipeline to determine tone:
+
+| Audience | Formality Level | Opening | Closing | Example Style |
+|---|---|---|---|---|
+| **Recruiter / HR** | Formal (שפה רשמית) | "שלום [שם], תודה על ההתקשרות" | "אשמח לשמוע ממך, בברכה" | Full sentences, professional vocabulary, credentials upfront |
+| **Clinic Owner** | Warm Professional (חם-מקצועי) | "היי [שם], ראיתי את הקליניקה שלך" | "נשמח לדבר, [שם]" | Personal touch, reference their clinic, mention shared values |
+| **IDF Alumni** | Informal (לא רשמי) | "אחי/אחותי, ראיתי שגם את/ה מחיל רפואה" | "יאללה, נתחבר!" | Military slang OK, shared experience references, casual |
+| **Comments (public)** | Conversational (שיחתי) | Direct response to content | — | Short, opinionated, adds value, emoji OK (1-2 max) |
+| **Dental Faculty** | Semi-formal (חצי-רשמי) | "שלום ד"ר [שם]" | "אשמח לשוחח, בהערכה" | Academic respect, mention clinical teaching interest |
+| **MedTech Contacts** | Warm Professional | "היי [שם], הפרויקט שלכם מרשים" | "נשמח להחליף רעיונות" | Tech-forward language, innovation focus, mix EN/HE naturally |
+
+**Transition rules within conversations:**
+1. **First message:** Match the audience formality level above
+2. **After they respond warmly:** Drop one formality level (e.g., Formal → Warm)
+3. **After 3+ exchanges:** Match their tone exactly (mirror their formality)
+4. **Meeting in person mentioned:** Switch to informal regardless of starting level
+5. **Never go MORE formal** than the initial message — only equal or less
+
+**Gender-inclusive addressing:**
+- Use "את/ה" (at/a) for unknown gender
+- In group posts: "לכולם" (to everyone) or "חברות וחברים" (friends, f+m)
+- Avoid gendered verb forms when possible — restructure sentence to avoid it
+
 ### Common Mistakes to Avoid
 
 | Mistake | Example | Fix |

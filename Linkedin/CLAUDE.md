@@ -2,12 +2,12 @@
 
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
-> Last updated: 2026-02-19 — **v2.0**
+> Last updated: 2026-02-24 — **v3.0**
 
 ## Project Overview
 
 Full-system LinkedIn profile optimizer for **Dr. Sergii Anipreyev (DMD)** targeting the **Israeli healthcare market**.
-8-agent architecture with browser-based analysis, AI content generation, Notion tracking, analytics, competitor intelligence, outreach management, and multi-persona recruiter advisory.
+8-agent architecture, 29 commands, 13 Notion databases, 13 templates. Browser-based analysis, AI content generation, Notion tracking, analytics, competitor intelligence, outreach management, and multi-persona recruiter advisory.
 
 ## Quick Start
 
@@ -20,7 +20,7 @@ Full-system LinkedIn profile optimizer for **Dr. Sergii Anipreyev (DMD)** target
 /linkedin-optimize benchmark     # Market comparison vs Israeli dental averages
 /linkedin-optimize competitors   # Competitor landscape analysis
 
-# ─── GENERATE (9 commands) ───────────────────────
+# ─── GENERATE (16 commands) ──────────────────────
 /linkedin-optimize headline      # Generate EN+HE headline variants (3 A/B)
 /linkedin-optimize about         # Write About section (6-part structure)
 /linkedin-optimize post          # Create LinkedIn post by pillar
@@ -30,6 +30,13 @@ Full-system LinkedIn profile optimizer for **Dr. Sergii Anipreyev (DMD)** target
 /linkedin-optimize video         # 60-second video script
 /linkedin-optimize newsletter    # Monthly newsletter draft
 /linkedin-optimize repurpose     # Recycle old content (60+ days)
+/linkedin-optimize article       # LinkedIn article (1500-2000 words) by pillar
+/linkedin-optimize batch         # Batch generation (max 10, auto pillar rotation)
+/linkedin-optimize ab-test       # A/B test setup + tracking + comparison
+/linkedin-optimize comment       # Strategic comment on a post (browser READ-ONLY)
+/linkedin-optimize crisis        # Sensitive topic response (3-part framework)
+/linkedin-optimize brand-statement # Tagline + 30s pitch + 2-min intro (EN+HE)
+/linkedin-optimize recommend     # Recommendation request or draft
 
 # ─── TRACK (4 commands) ─────────────────────────
 /linkedin-optimize weekly        # Generate weekly action plan → Notion
@@ -99,7 +106,7 @@ Full-system LinkedIn profile optimizer for **Dr. Sergii Anipreyev (DMD)** target
 | David Stern | `agents/personas/david-stern.md` | Clinic Owner, boutique practice — private practice, revenue-sharing |
 | Anna Petrova | `agents/personas/anna-petrova.md` | MedTech Recruiter — clinical advisory, startup roles |
 
-### Data & Template Files (9)
+### Data & Template Files (13)
 | File | Purpose |
 |---|---|
 | `data/profile-context.yaml` | Keywords, templates, pillars, rhythm, Boolean strings, hashtags, seasonal calendar, posting schedule, personas |
@@ -111,6 +118,10 @@ Full-system LinkedIn profile optimizer for **Dr. Sergii Anipreyev (DMD)** target
 | `templates/recommendation-requests.md` | 5 recommendation request templates |
 | `templates/endorsement-strategy.md` | Priority skills + endorsement acquisition plan |
 | `templates/newsletter-framework.md` | Monthly newsletter structure (6 sections) |
+| `templates/video-script-framework.md` | 5 video script templates by pillar (4-act 60s format) |
+| `templates/article-framework.md` | 5 article templates by pillar (1500-2000 words, SEO) |
+| `templates/engagement-comments.md` | 5 comment types with templates (300-char limit) |
+| `templates/crisis-responses.md` | 5 crisis categories with 3-part response framework |
 
 All paths relative to `linkedin-optimizer/`.
 
@@ -164,11 +175,12 @@ Do NOT use `notion-fetch` with `collection://` URLs — it returns schema, not r
 |---|---|---|---|
 | LinkedIn Write Guard | PreToolUse | Playwright write tools + "linkedin" in input | **Blocks** the action — browser is READ-ONLY |
 | Notion Write Reminder | PostToolUse | Notion create-pages / update-page | Suggests `/notion-sync check` for Content Bank writes |
+| Medical Vocab Trigger | PostToolUse | Write/Edit on linkedin-optimizer files | Reminds to run Medical Vocabulary Checker |
 
 ### Skills
 | Skill | Location | Purpose |
 |---|---|---|
-| `linkedin-optimize` | `~/.claude/skills/linkedin-optimize/SKILL.md` | Main 22-command optimizer + 3 compound workflows |
+| `linkedin-optimize` | `~/.claude/skills/linkedin-optimize/SKILL.md` | Main 29-command optimizer + 3 compound workflows |
 | `cv-data` | `~/.claude/skills/cv-data/SKILL.md` | Universita Hub data extraction |
 | `content-bank` | `~/.claude/skills/content-bank/SKILL.md` | Content Bank writes with schema validation |
 | `notion-sync` | `~/.claude/skills/notion-sync/SKILL.md` | Metrics freshness audit |
@@ -222,6 +234,6 @@ git -C ~/Desktop add Linkedin/linkedin-optimizer/path/to/file
 
 ## Related Config Files
 
-- `~/.claude/skills/linkedin-optimize/SKILL.md` — full skill definition (22 commands + 3 compound workflows)
+- `~/.claude/skills/linkedin-optimize/SKILL.md` — full skill definition (29 commands + 3 compound workflows)
 - `~/.claude/projects/-Users-sssssaaaaa-Desktop-Linkedin/memory/MEMORY.md` — project memory (architecture, all DB IDs)
 - `.claude/settings.local.json` — project-level MCP tool permissions

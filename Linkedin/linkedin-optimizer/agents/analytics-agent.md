@@ -217,6 +217,85 @@ Medium-strength terms used: X/Y (Z%)
 
 Flag alert if <50% of High-strength terms have been used.
 
+### 6. Israeli Dental Market Benchmarks
+
+Comprehensive benchmark data for Israeli dental professionals on LinkedIn. Use these ranges for the `benchmark` command comparison.
+
+| Metric | Below Average | Average | Above Average | Top 10% |
+|---|---|---|---|---|
+| Profile Views / week | < 20 | 20-50 | 50-120 | 150+ |
+| Search Appearances / week | < 15 | 15-40 | 40-100 | 120+ |
+| Connections (total) | < 100 | 100-300 | 300-500 | 500+ |
+| Engagement Rate (%) | < 1.0% | 1.0-2.5% | 2.5-5.0% | 5.0%+ |
+| SSI Score (0-100) | < 35 | 35-50 | 50-70 | 75+ |
+| Posts / month | 0 | 1-2 | 3-4 | 5+ |
+| InMail Response Rate | < 5% | 5-15% | 15-30% | 30%+ |
+| Recommendations | 0 | 1-3 | 4-8 | 10+ |
+
+**Source:** Maya Cohen's recruiter market observations from `agents/recruiter-persona.md` + LinkedIn industry averages for healthcare professionals in Israel.
+
+**Important:** These benchmarks represent the Israeli dental market specifically. General LinkedIn benchmarks differ significantly (Israeli market is smaller, more relationship-driven, and has different engagement patterns due to Sun-Thu work week).
+
+### 7. SSI Calculation Formula
+
+LinkedIn's Social Selling Index measures 4 pillars, each scored 0-25:
+
+| Pillar | Range | Components | How to Improve |
+|---|---|---|---|
+| **Establish Professional Brand** | 0-25 | Profile completeness, content publishing frequency, engagement received on posts | Complete all profile sections, publish weekly, use rich media |
+| **Find the Right People** | 0-25 | Search frequency, profile views of decision-makers, saved leads | Search for Israeli dental contacts weekly, view recruiter profiles |
+| **Engage with Insights** | 0-25 | Content sharing, commenting, group participation, article publishing | Comment on 2-3 posts daily (Sun-Thu), share industry articles |
+| **Build Relationships** | 0-25 | Connection acceptance rate, network growth, message response rate, senior connections | Send 10 targeted requests/week, respond to messages within 24h |
+
+**Total SSI = Σ (4 pillars), range 0-100**
+
+**Per-pillar scoring estimate (when SSI page unavailable):**
+```
+pillar_score = (profile_completeness × 0.3 + content_activity × 0.3 + engagement × 0.2 + network_quality × 0.2) × 25
+```
+
+**SSI Improvement Priority Matrix:**
+- Pillar < 10 → ❌ Critical: focus 80% of effort here
+- Pillar 10-15 → ⚠️ Below average: targeted weekly actions
+- Pillar 15-20 → ✅ Good: maintain current activity
+- Pillar > 20 → 🌟 Excellent: shift focus to weaker pillars
+
+### 8. Tier Advancement Projection
+
+**Formula:**
+```
+time_to_next_tier = (target_metric - current_metric) / weekly_delta
+```
+
+Where `weekly_delta` is calculated from the last 4 weeks of Metrics Log data (or 2 weeks minimum).
+
+**Tier Thresholds (from recruiter-persona.md):**
+
+| Tier | Score Range | Profile Views/wk | Connections | SSI | Boolean Match |
+|---|---|---|---|---|---|
+| D (Below threshold) | 0-44 | < 20 | < 50 | < 35 | 0-1 / 4 |
+| C (Potential) | 45-64 | 20-50 | 50-100 | 35-50 | 2 / 4 |
+| B (Strong) | 65-84 | 50-120 | 100-300 | 50-70 | 3 / 4 |
+| A (Premium) | 85-100 | 120+ | 300+ | 70+ | 4 / 4 |
+
+**Projection calculation steps:**
+1. Get current metrics from latest Metrics Log entry
+2. Calculate weekly growth rate from last 4 entries: `weekly_delta = (latest - oldest) / num_weeks`
+3. If `weekly_delta ≤ 0`, report "No positive trend — cannot project advancement"
+4. For each metric below target tier threshold, calculate: `weeks_needed = ceil((target - current) / weekly_delta)`
+5. The **bottleneck metric** = metric with the longest `weeks_needed`
+6. Report projected date: `today + (bottleneck_weeks × 7) days`
+
+**Acceleration multipliers** (estimated impact of specific actions):
+| Action | Expected Weekly Impact |
+|---|---|
+| Enable Open to Work | +30-50% profile views (one-time boost) |
+| Activate Premium | +20% search appearances, InMail access |
+| Post consistently (1/week) | +15-25% profile views, +10% engagement |
+| Comment on 3 posts daily | +20% engagement, +10% connections |
+| Join 5+ relevant groups | +10% search appearances |
+| Add Hebrew profile version | +25% Israeli recruiter visibility |
+
 ---
 
 ## Integration with Other Agents

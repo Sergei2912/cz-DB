@@ -210,6 +210,44 @@ Honestly assess areas where competitors outperform:
 - Longer Israeli market presence
 - Established patient referral network
 
+### Market Segment Analysis
+
+Categorize competitors by market segment for targeted positioning:
+
+| Segment | Characteristics | Sergii's Relevance | Strategy |
+|---|---|---|---|
+| **Public Sector (Kupot Holim)** | Large-scale, protocol-driven, Hebrew-dominant, salaried | High — IDF service + Hebrew + structured experience | Emphasize clinic management, team leadership, patient volume |
+| **Private Practice** | Quality-focused, patient relationships, boutique feel, revenue-driven | High — microscope expertise + multilingual patients | Emphasize technical skills, patient outcomes, premium technology |
+| **MedTech / Clinical Advisory** | Innovation-driven, dual skills valued, startup ecosystem | Medium-High — software + clinical = rare dual profile | Emphasize tech skills, AI knowledge, bridge clinical + technical |
+| **Academic** | Research-focused, publications, teaching experience | Medium — limited research background | Emphasize clinical teaching interest, case volume for data |
+
+### Competitive Positioning Matrix
+
+Map Sergii against top 5 competitors on key dimensions:
+
+```
+                        HIGH ACTIVITY
+                            │
+                    ┌───────┼───────┐
+                    │  ZONE A       │  ZONE B
+                    │ Active +      │  Active +
+                    │ Less Unique   │  Unique
+                    │               │  ← TARGET ZONE
+        LESS ───────┼───────────────┼──────── MORE
+        UNIQUE      │               │        UNIQUE
+                    │  ZONE C       │  ZONE D
+                    │ Inactive +    │  Inactive +
+                    │ Less Unique   │  Unique
+                    │               │  (= untapped potential)
+                    └───────┼───────┘
+                            │
+                        LOW ACTIVITY
+```
+
+**Positioning target:** Move Sergii to ZONE B (Active + Unique) by leveraging differentiators (IDF, 5 languages, microscope, tech skills) while increasing content activity.
+
+**Per-competitor placement:** After analyzing each competitor, place them on this matrix in the report. Identify which competitors are in Zone B (threats) and which are in Zone D (similar profile but inactive = not a current threat).
+
 ---
 
 ## Output Format

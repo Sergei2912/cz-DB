@@ -111,6 +111,39 @@ After 3 follow-ups with no response:
 2. Set Next Action: "Passive engagement — like/comment their content weekly for 30 days"
 3. Set Next Action Date: today + 30 days (review date)
 
+### 6b. Passive Engagement Protocol (Warm-Up Strategy)
+
+For contacts in "Cold" status OR before sending initial connection request to high-value targets:
+
+**Phase 1 — Silent Warm-Up (Week 1-2):**
+1. Like 2-3 of their recent posts (space over several days)
+2. View their profile (they get a notification)
+3. Like comments on their posts from mutual connections
+
+**Phase 2 — Visible Engagement (Week 2-3):**
+1. Leave a thoughtful comment on one of their posts (use `engagement-comments.md` templates)
+2. Share their content with a professional commentary
+3. React to their career updates (promotions, certifications)
+
+**Phase 3 — Connect (Week 3-4):**
+1. Send connection request referencing your engagement: "I've been following your posts about [topic]..."
+2. Much higher acceptance rate than cold outreach (estimated 40-60% vs 15-25%)
+
+**When to use passive engagement:**
+- Priority = High contacts (clinic owners, Kupot Holim HR)
+- Contacts who rejected initial connection request (wait 30 days, then passive engage)
+- Aspirational connections (KOLs, department heads) — build familiarity first
+
+**Follow-up Personalization by Response Type:**
+
+| Response Type | Tone | Next Action | Template Adjustment |
+|---|---|---|---|
+| Enthusiastic ("Great to connect!") | Match energy, warm | Share relevant content within 48h | Add personal detail, suggest call |
+| Professional ("Thanks for connecting") | Formal, value-first | Send industry insight in 3 days | Lead with data/expertise |
+| Brief ("👍" or "Thanks") | Keep it light | Like their next post, follow up in 7 days | Shorter messages, specific ask |
+| Question ("What do you specialize in?") | Detailed, credential-rich | Respond within 24h with specifics | Include Key Metrics from Universita Hub |
+| No response (after 7+ days) | Persistent but respectful | Move to next follow-up step | Change approach (question vs statement) |
+
 ### 7. Contact Responds (Status: Responded)
 
 At any point if contact responds:
