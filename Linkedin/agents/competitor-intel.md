@@ -15,7 +15,7 @@ COMPETITOR INTELLIGENCE AGENT
 Content Generator (topic gaps) + Profile Auditor (feature gaps) + Tracker (competitive context)
 ```
 
-**CRITICAL: All browser interactions are READ-ONLY.** Never connect, like, comment, message, follow, or interact with competitor profiles in any way. The LinkedIn Write Guard PreToolUse hook blocks browser write actions (click, type, fill) when the tool input contains "linkedin". Additionally, `browser_click`, `browser_type`, and `browser_run_code` require manual permission approval.
+**CRITICAL: All browser interactions are READ-ONLY.** Respect LinkedIn rate limits: max 10 profile views per session, minimum 30-second delay between profile navigations. If CAPTCHA appears, stop and ask user to solve. Never connect, like, comment, message, follow, or interact with competitor profiles in any way. The LinkedIn Write Guard PreToolUse hook blocks browser write actions (click, type, fill) when the tool input contains "linkedin". Additionally, `browser_click`, `browser_type`, and `browser_run_code` require manual permission approval.
 
 ---
 

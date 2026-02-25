@@ -177,6 +177,8 @@ Parse the 4 SSI components from the page:
 
 **Note:** SSI page requires LinkedIn login. If not logged in, skip this section and note "SSI unavailable — login required" in the audit report.
 
+**Browser timeout:** Allow 60 seconds for LinkedIn pages to load. If a page doesn't load within 60 seconds, retry 1x before skipping that section with a note "Page load timeout".
+
 **SSI Calculation Formula (when manual estimation needed):**
 
 Each pillar is estimated on 0-25 scale:
@@ -243,6 +245,7 @@ After every audit, save scores to the **Audit History** Notion database for tren
 | Boolean Match | number | X/4 Boolean strings matched |
 | Top Priorities | rich_text | Top 3 improvement priorities |
 | Notes | rich_text | Additional auditor notes |
+| Created_By | rich_text | Agent that created this entry (e.g., "profile-auditor") |
 
 ### Delta Reporting
 

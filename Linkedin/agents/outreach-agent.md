@@ -47,9 +47,28 @@ Tracker Agent (weekly status)
 
 ```
 Identified → Request Sent → Connected → Follow-up 1 → Follow-up 2 → Follow-up 3
-                                ↓                                          ↓
-                           Responded → Meeting                         Cold → Archived
+                  ↓              ↓                                          ↓
+             (>14 days)    Responded → Meeting → Archived (outcome logged)
+                  ↓                                  Cold → (>30 days) → Archived
+                 Cold
 ```
+
+**Timeout transitions (automatic):**
+- Request Sent + no acceptance after 14 days → Cold (set Next Action: "Passive engagement or re-request in 30 days")
+- Cold + no re-engagement activity after 30 days → Archived (set Notes: "No response after full sequence")
+- Meeting + meeting completed → Archived (set Notes: outcome summary + next steps if any)
+
+**State transition validation:** Before changing Status, verify the current status is a valid predecessor. Valid transitions:
+- Identified → Request Sent
+- Request Sent → Connected | Cold (timeout)
+- Connected → Follow-up 1 | Responded
+- Follow-up N → Follow-up N+1 | Responded
+- Follow-up 3 → Cold | Responded
+- Cold → Archived | Identified (re-engagement cycle)
+- Responded → Meeting | Archived (negative response)
+- Meeting → Archived
+
+Any other transition is invalid — log a warning and ask user for clarification.
 
 ---
 
@@ -74,6 +93,7 @@ After user sends the request:
 2. Update Last Touch → today
 3. Set Next Action: "Wait for acceptance (check in 7 days if no response)"
 4. Set Next Action Date: today + 7 days
+5. **Timeout rule:** If still Request Sent after 14 days → move to Cold (set Next Action: "Passive engagement — warm up before re-requesting in 30 days")
 
 ### 3. Connection Accepted (Status: Connected)
 
@@ -160,7 +180,15 @@ When a meeting is arranged:
 1. Update Status → Meeting
 2. Set Next Action: "Prepare for meeting: [agenda items]"
 3. Set Next Action Date: meeting date
-4. After meeting → Update Notes with outcome, next steps
+4. After meeting → Update Notes with outcome summary and next steps
+5. Update Status → Archived (set Notes: "Meeting [date]: [outcome]. Next steps: [actions]")
+
+### 9. Cold Timeout (Status: Cold → Archived)
+
+If a contact has been in Cold status for 30+ days with no re-engagement:
+1. Update Status → Archived
+2. Set Notes: "No response after full sequence — archived [date]"
+3. Remove from active pipeline reports
 
 ---
 

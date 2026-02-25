@@ -95,6 +95,10 @@ The tracker uses Universita Hub to **validate generated content** and **enrich s
 | Send 3-5 connection requests on Tuesday | Networking | Medium |
 | Write original post on Thursday | Content | High |
 
+## Idempotency Rule
+
+Before creating any Action Tracker entry, search for an existing entry with the same Task name and Week. If found, update the existing entry instead of creating a duplicate. This prevents duplicate tasks when a weekly plan is regenerated or when a command is retried after a partial failure.
+
 ## Weekly Plan Generation Logic
 
 When generating a weekly plan:
