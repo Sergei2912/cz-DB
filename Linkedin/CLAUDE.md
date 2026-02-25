@@ -139,7 +139,7 @@ All paths relative to `linkedin-optimizer/`.
 
 | Database | Data Source ID | Purpose |
 |---|---|---|
-| Action Tracker | `a0056838-0d6e-41c1-b4f5-e32e3c3ee7f9` | Weekly action items |
+| Action Tracker | `a0056838-a991-4c03-a077-5371152f27d7` | Weekly action items |
 | Content Bank | `f295698f-ca84-4d74-b06f-b74afa1cc96c` | Generated content drafts |
 | Metrics Log | `bcec5092-ca2e-4764-9763-e727b1ffb18b` | LinkedIn analytics + SSI scores |
 | Competitor Profiles | `af539664-b7ac-4c8f-b854-8961e70bd816` | Competitor analysis data |
@@ -173,7 +173,6 @@ Do NOT use `notion-fetch` with `collection://` URLs — it returns schema, not r
 
 | Hook | Type | Trigger | Action |
 |---|---|---|---|
-| LinkedIn Write Guard | PreToolUse | Playwright write tools + "linkedin" in input | **Blocks** the action — browser is READ-ONLY |
 | Notion Write Reminder | PostToolUse | Notion create-pages / update-page | Suggests `/notion-sync check` for Content Bank writes |
 | Medical Vocab Trigger | PostToolUse | Write/Edit on linkedin-optimizer files | Reminds to run Medical Vocabulary Checker |
 
@@ -198,10 +197,10 @@ Do NOT use `notion-fetch` with `collection://` URLs — it returns schema, not r
 
 ## Safety Rules
 
-1. **Browser is READ-ONLY** — never modify LinkedIn directly (no edit, save, post, send). Enforced by PreToolUse hook.
+1. **Browser: full read-write access** via Chrome extension and Playwright MCP. LinkedIn modifications (edit, save, post, send) require **explicit user confirmation** before execution.
 2. **All content is DRAFT** — user reviews and publishes manually
 3. **Never enter credentials** — if login needed, ask user
-4. **Never automate** connection requests, messages, or posts
+4. **Never automate** connection requests, messages, or posts **without user approval**
 5. **All metrics/credentials from Notion** — never hardcode data, always fetch live
 6. **LinkedIn Ready flag** — only use Skills/CV Items where LinkedIn Ready = true
 7. **Medical vocabulary** — use Medical Lexicon DB terms, never Avoid-flagged terms
