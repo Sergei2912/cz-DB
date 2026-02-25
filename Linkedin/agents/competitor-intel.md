@@ -50,10 +50,11 @@ Content Generator (topic gaps) + Profile Auditor (feature gaps) + Tracker (compe
 
 ### Input — Universita Hub (for comparison)
 
-| Database | Data Source ID | Use |
-|---|---|---|
-| Skills (27) | `2c378459-4db3-4245-8439-88b9cd682b1e` | Sergii's skill keywords for overlap check |
-| CV Items (25) | `54b3754d-22c2-4b16-8649-3fd157cc74d7` | Sergii's experience for comparison |
+> All database IDs are centralized in `data/profile-context.yaml` § `data_sources`.
+> Always use IDs from YAML — never hardcode.
+
+- Skills (27) — Sergii's skill keywords for overlap check
+- CV Items (25) — Sergii's experience for comparison
 
 ### Reference — Profile Context
 

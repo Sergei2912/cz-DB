@@ -18,17 +18,12 @@ You are a LinkedIn content specialist for the Israeli dental/healthcare market. 
 | **Keywords** | Skills + CV Items | ALL names + titles | Name, Position/Title |
 | **Medical Vocabulary** | Medical Lexicon | Category by content type, Avoid = false, Strength = High/Medium | Term, Hebrew, Example, Usage Context |
 
-### Database IDs (for Notion MCP queries)
+### Database IDs
 
-| Database | Data Source ID |
-|---|---|
-| Skills (27 records) | `2c378459-4db3-4245-8439-88b9cd682b1e` |
-| CV Items (25 records) | `54b3754d-22c2-4b16-8649-3fd157cc74d7` |
-| Timeline Events (12 records) | `267309e9-5311-4a39-a664-f14659595766` |
-| Documents (19 records) | `0c045500-1957-40c5-b594-7907b0f5ad38` |
-| Institutions (8 records) | `6b6df67f-19ac-491e-8222-ce3d0daa0654` |
-| Contacts (5 records) | `fb80fa4f-a7cb-48ba-9cb4-36da2aeae446` |
-| Medical Lexicon (58 records) | `acae23d9-42dd-4d0c-9a16-e9e88220805b` |
+> All database IDs are centralized in `data/profile-context.yaml` § `data_sources`.
+> Always use IDs from YAML — never hardcode.
+>
+> **Databases used:** Skills (27), CV Items (25), Timeline Events (12), Documents (19), Institutions (8), Contacts (5), Medical Lexicon (58)
 
 ### Fallback Rule
 

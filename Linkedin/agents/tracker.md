@@ -32,15 +32,18 @@ Parent Page: `304d835b-048b-81b7-985d-fd49b2ef9d4d`
 
 The tracker uses Universita Hub to **validate generated content** and **enrich status reports**:
 
-| Database | Data Source ID | Tracker Use |
-|---|---|---|
-| Skills (27) | `2c378459-4db3-4245-8439-88b9cd682b1e` | Count LinkedIn Ready skills → track skill coverage progress |
-| CV Items (25) | `54b3754d-22c2-4b16-8649-3fd157cc74d7` | Count LinkedIn Ready items → track experience coverage |
-| Timeline Events (12) | `267309e9-5311-4a39-a664-f14659595766` | Milestone events → track which stories have been used in posts |
-| Documents (19) | `0c045500-1957-40c5-b594-7907b0f5ad38` | CV Relevant credentials → track which are displayed on LinkedIn |
-| Institutions (8) | `6b6df67f-19ac-491e-8222-ce3d0daa0654` | Reference data for experience entries |
-| Contacts (5) | `fb80fa4f-a7cb-48ba-9cb4-36da2aeae446` | Reference contacts for networking strategy |
-| Medical Lexicon (58) | `acae23d9-42dd-4d0c-9a16-e9e88220805b` | Track vocabulary usage: which terms appear in Content Bank entries |
+> All database IDs are centralized in `data/profile-context.yaml` § `data_sources`.
+> Always use IDs from YAML — never hardcode.
+
+| Database | Tracker Use |
+|---|---|
+| Skills (27) | Count LinkedIn Ready skills → track skill coverage progress |
+| CV Items (25) | Count LinkedIn Ready items → track experience coverage |
+| Timeline Events (12) | Milestone events → track which stories have been used in posts |
+| Documents (19) | CV Relevant credentials → track which are displayed on LinkedIn |
+| Institutions (8) | Reference data for experience entries |
+| Contacts (5) | Reference contacts for networking strategy |
+| Medical Lexicon (58) | Track vocabulary usage: which terms appear in Content Bank entries |
 
 ## 30-Day Action Plan (Pre-loaded Tasks)
 
