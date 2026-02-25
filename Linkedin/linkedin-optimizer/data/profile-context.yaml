@@ -1,0 +1,477 @@
+# LinkedIn Profile Optimization Context
+# Dr. Sergii Anipreyev — Israeli Healthcare Market
+# Last updated: 2025-02-16
+#
+# DATA SOURCE ARCHITECTURE:
+# This YAML contains CONFIGURATION (keywords, templates, rhythm, pillars).
+# All FACTUAL DATA (differentiators, metrics, credentials, dates) is fetched
+# dynamically from Universita Hub (7 Notion databases) at runtime.
+# The differentiators below are FALLBACK values only — always prefer live Notion data.
+
+# ─── NOTION DATA SOURCES (Universita Hub) ────────────────────────────────
+data_sources:
+  universita_hub:
+    parent_page: "304d835b-048b-81b7-985d-fd49b2ef9d4d"
+    databases:
+      skills: "2c378459-4db3-4245-8439-88b9cd682b1e"       # 27 records — Name, Domain, Proficiency, Key Metrics, LinkedIn Ready
+      cv_items: "54b3754d-22c2-4b16-8649-3fd157cc74d7"      # 25 records — Section, Bullet Points, Key Metrics, LinkedIn Ready
+      timeline: "267309e9-5311-4a39-a664-f14659595766"       # 12 records — Event Type, Milestone, Key Outcome
+      documents: "0c045500-1957-40c5-b594-7907b0f5ad38"      # 19 records — Category, Content Summary, CV Relevant
+      institutions: "6b6df67f-19ac-491e-8222-ce3d0daa0654"   # 8 records  — Name, Type, Country
+      contacts: "fb80fa4f-a7cb-48ba-9cb4-36da2aeae446"       # 5 records  — Relationship Type, Military Rank
+      medical_lexicon: "acae23d9-42dd-4d0c-9a16-e9e88220805b" # 58 records — Term, Category, Domain, Hebrew, Strength, Source
+
+  linkedin_optimizer:
+    hub_page: "308d835b-048b-819d-b9b7-c764ec9ac267"
+    databases:
+      action_tracker: "a0056838-a991-4c03-a077-5371152f27d7"
+      content_bank: "f295698f-ca84-4d74-b06f-b74afa1cc96c"
+      metrics_log: "bcec5092-ca2e-4764-9763-e727b1ffb18b"
+      competitor_profiles: "af539664-b7ac-4c8f-b854-8961e70bd816"
+      outreach_pipeline: "6993251f-3ae9-4b40-aa24-669b83e51926"
+      audit_history: "ffb2b0e4-2bbc-474c-9419-a89613642316"
+
+  # Advisory layer — recruiter persona with verified Israeli dental market data
+  recruiter_persona:
+    agent_file: "agents/recruiter-persona.md"
+    persona_name: "Maya Cohen"
+    role: "Senior Healthcare Recruiter — Israeli dental market"
+    integration: "advisory"  # advisory = enriches other agents, does not replace them
+    # Maya's primary Boolean search strings (test profile against these)
+    boolean_searches:
+      - '("endodontist" OR "אנדודונט" OR "root canal" OR "טיפול שורש") AND ("Israel" OR "ישראל")'
+      - '("endodontist" OR "endodontics") AND ("surgical microscope" OR "מיקרוסקופ") AND ("Israel")'
+      - '("IDF" OR "צה״ל" OR "Medical Corps" OR "חיל רפואה") AND ("dentist" OR "dental" OR "רופא שיניים")'
+      - '("endodontist" OR "endodontics") AND ("DMD" OR "DDS") AND ("Israel" OR "relocation" OR "aliyah")'
+    # Additional recruiter personas — different market perspectives
+    additional_personas:
+      - file: "agents/personas/yael-levy.md"
+        name: "Yael Levy"
+        role: "HR Director, Kupat Holim Clalit"
+        use_for: "Public sector roles, HMO positions, Kupat Holim hiring"
+      - file: "agents/personas/david-stern.md"
+        name: "David Stern"
+        role: "Clinic Owner, boutique practice"
+        use_for: "Private practice, partnership opportunities, revenue-sharing roles"
+      - file: "agents/personas/anna-petrova.md"
+        name: "Anna Petrova"
+        role: "MedTech Recruiter"
+        use_for: "Clinical advisory, MedTech roles, startup positions, dual career"
+
+# ─── IDENTITY ────────────────────────────────────────────────────────────
+identity:
+  full_name: "Dr. Sergii Anipreyev"
+  credentials: "DMD"
+  primary_role: "Endodontist"
+  secondary_role: "Software Developer"
+  target_market: "Israel"
+  target_cities:
+    - "Tel Aviv"
+    - "Jerusalem"
+    - "Central District"
+
+# ─── DIFFERENTIATORS (fallback — prefer Notion live data) ────────────────
+# Source: Skills (LinkedIn Ready, sorted by Priority) + CV Items (Key Metrics)
+# At runtime, the agent fetches fresh data from Notion. These are fallbacks only.
+differentiators:
+  - id: idf_service
+    label: "IDF Medical Corps Captain (2015-2023)"
+    weight: 1.0  # strongest signal for Israeli market
+    description: "8 years military service, Captain rank, dental clinic commander"
+
+  - id: clinical_volume
+    label: "1,700+ endodontic procedures"
+    weight: 0.9
+    description: "Quantified clinical throughput demonstrating expertise"
+
+  - id: microscope_expertise
+    label: "375+ hours surgical microscope"
+    weight: 0.85
+    description: "Premium skill, not all clinics have microscopes"
+
+  - id: multilingual
+    label: "Hebrew, English, Russian, Ukrainian, Czech"
+    weight: 0.8
+    description: "Serves Israel's diverse population, 1M+ Russian speakers"
+
+  - id: eu_credentials
+    label: "Czech nostrifikace (Charles University, 2025)"
+    weight: 0.6
+    description: "EU credential adds international credibility"
+
+  - id: tech_skills
+    label: "Software Development + AI"
+    weight: 0.7
+    description: "Rare dual medical-tech profile for MedTech/startup ecosystem"
+
+keywords:
+  en:
+    position:
+      - "dentist"
+      - "dental surgeon"
+      - "endodontist"
+    specialty:
+      - "endodontics"
+      - "root canal treatment"
+      - "retreatment"
+    technology:
+      - "surgical microscope"
+      - "NiTi rotary files"
+      - "CBCT"
+    military:
+      - "IDF"
+      - "Medical Corps"
+      - "Captain"
+    credentials:
+      - "DMD"
+      - "licensed dentist"
+      - "board certified"
+    soft_skills:
+      - "team leadership"
+      - "clinic management"
+      - "training"
+    languages:
+      - "Hebrew"
+      - "English"
+      - "Russian"
+      - "Ukrainian"
+    location:
+      - "Israel"
+      - "Tel Aviv"
+      - "Jerusalem"
+      - "Central District"
+
+  he:
+    position:
+      - "רופא שיניים"
+      - "אנדודונט"
+    specialty:
+      - "אנדודונטיה"
+      - "טיפול שורש"
+    technology:
+      - "מיקרוסקופ כירורגי"
+      - "CBCT"
+    military:
+      - "צה״ל"
+      - "חיל רפואה"
+      - "קצין"
+    credentials:
+      - "DMD"
+      - "רישיון משרד הבריאות"
+    soft_skills:
+      - "מנהיגות"
+      - "ניהול קליניקה"
+      - "הכשרה"
+    languages:
+      - "עברית"
+      - "אנגלית"
+      - "רוסית"
+    location:
+      - "ישראל"
+      - "תל אביב"
+      - "ירושלים"
+      - "מרכז"
+
+# ─── HASHTAG STRATEGY ───────────────────────────────────────────────────
+hashtags:
+  primary_en:  # use in every post
+    - "#Endodontics"
+    - "#DentalSurgeon"
+    - "#IsraelHealthcare"
+  secondary_en:  # rotate 2-3 per post
+    - "#SurgicalMicroscope"
+    - "#RootCanalTreatment"
+    - "#DentalTechnology"
+    - "#IDFVeterans"
+    - "#MedTech"
+    - "#DigitalDentistry"
+  primary_he:  # use when HE content or bilingual
+    - "#אנדודונטיה"
+    - "#רפואתשיניים"
+    - "#ישראל"
+  secondary_he:
+    - "#צהל"
+    - "#מיקרוסקופכירורגי"
+    - "#בריאותהפה"
+  niche:  # use for specific pillars
+    - "#CBCT"
+    - "#NiTiFiles"
+    - "#DentalMicroscopy"
+    - "#ClinicalCases"
+  rules:
+    total_per_post: "3-5"
+    mix: "2 EN primary + 1-2 EN secondary + 1 HE"
+    pillar_specific: "Add 1 niche hashtag matching the pillar"
+
+content_pillars:
+  - id: clinical_cases
+    label: "Clinical Case Studies"
+    frequency: "bi-weekly"
+    language: "English"
+    examples:
+      - "Complex MB2 calcified canal — microscope-assisted approach"
+      - "Retreatment after failed RCT — step-by-step"
+
+  - id: idf_transition
+    label: "IDF-to-Civilian Transition"
+    frequency: "monthly"
+    language: "English/Hebrew"
+    examples:
+      - "Lessons from 8 years of military dental leadership"
+      - "From IDF clinic commander to private practice"
+
+  - id: european_perspective
+    label: "European vs Israeli Practice"
+    frequency: "monthly"
+    language: "English"
+    examples:
+      - "How Czech dental practice differs from Israeli standards"
+      - "What I learned navigating EU credential recognition"
+
+  - id: tech_in_dentistry
+    label: "Technology in Dentistry"
+    frequency: "bi-weekly"
+    language: "English"
+    examples:
+      - "Why every endodontist should use a surgical microscope"
+      - "AI applications in endodontic diagnosis"
+
+  - id: russian_patients
+    label: "Russian-Speaking Patient Care"
+    frequency: "monthly"
+    language: "English"
+    examples:
+      - "Cultural competence in serving Israel's Russian-speaking community"
+      - "Bridging language gaps in dental care"
+
+# ─── SEASONAL CONTENT CALENDAR ──────────────────────────────────────────
+seasonal_calendar:
+  # Israeli calendar events mapped to content pillars
+  - event: "Yom HaZikaron"
+    date_range: "April-May (varies by Hebrew calendar)"
+    pillar: "IDF Transition"
+    content_angle: "IDF service reflection, veteran leadership, remembrance"
+    priority: "high"
+  - event: "Yom HaAtzmaut"
+    date_range: "April-May (day after Yom HaZikaron)"
+    pillar: "IDF Transition"
+    content_angle: "Building Israel's healthcare, national contribution through service"
+    priority: "medium"
+  - event: "Post-IDF Release Cycle"
+    date_range: "July-August"
+    pillar: "IDF Transition"
+    content_angle: "Career transition advice for newly released soldiers"
+    priority: "high"
+  - event: "Academic Year Start"
+    date_range: "October"
+    pillar: "Clinical Cases"
+    content_angle: "Dental education, mentoring new residents, clinical teaching"
+    priority: "medium"
+  - event: "International Dental Day"
+    date_range: "March 6"
+    pillar: "Clinical Cases"
+    content_angle: "Public dental health awareness, community dentistry"
+    priority: "medium"
+  - event: "Medical Innovation Week Israel"
+    date_range: "varies"
+    pillar: "Tech in Dentistry"
+    content_angle: "Israeli MedTech innovation, dental technology showcase"
+    priority: "medium"
+  - event: "Aliyah Anniversary"
+    date_range: "personal"
+    pillar: "European Perspective"
+    content_angle: "Integration journey, cross-cultural practice, lessons learned"
+    priority: "low"
+  - event: "Russian New Year"
+    date_range: "December 31 - January 1"
+    pillar: "Russian Patients"
+    content_angle: "Community connection, cultural bridge, serving diverse patients"
+    priority: "low"
+
+  # Religious holidays — low/no engagement, avoid posting
+  religious_holidays:
+    - event: "Rosh Hashana"
+      date_range: "September-October (1-2 Tishrei)"
+      posting_rule: "avoid"
+      notes: "2 days, most Israelis off work"
+    - event: "Yom Kippur"
+      date_range: "September-October (10 Tishrei)"
+      posting_rule: "avoid"
+      notes: "Complete fast day, zero engagement expected"
+    - event: "Sukkot"
+      date_range: "September-October (15-21 Tishrei)"
+      posting_rule: "reduce"
+      notes: "First and last days = holiday, middle days = chol hamoed (partial activity)"
+    - event: "Pesach"
+      date_range: "March-April (15-22 Nisan)"
+      posting_rule: "reduce"
+      notes: "First and last days = holiday, middle days = chol hamoed"
+    - event: "Purim"
+      date_range: "February-March (14 Adar)"
+      posting_rule: "reduce"
+      notes: "Light holiday, can post fun/informal content"
+
+weekly_rhythm:
+  sunday:
+    - task: "Share clinical article with commentary"
+      time_min: 10
+      language: "English"
+    - task: "Send 3-5 connection requests (IDF alumni, dentists)"
+      time_min: 5
+      language: "Hebrew"
+  monday:
+    - task: "Like/comment on 2-3 posts in Israeli dental community"
+      time_min: 5
+      language: "HE/EN"
+  tuesday:
+    - task: "Like/comment on 2-3 posts"
+      time_min: 5
+      language: "HE/EN"
+    - task: "Send 3-5 connection requests"
+      time_min: 5
+      language: "Hebrew"
+  wednesday:
+    - task: "Like/comment on 2-3 posts"
+      time_min: 5
+      language: "HE/EN"
+  thursday:
+    - task: "Write original post (clinical tip, case insight)"
+      time_min: 20
+      language: "English"
+    - task: "Like/comment on 2-3 posts"
+      time_min: 5
+      language: "HE/EN"
+
+networking:
+  priority_targets:
+    - category: "IDF Alumni"
+      who: "Former colleagues from Medical Corps"
+      strategy: "Personal: reference shared service, unit, or base"
+    - category: "Clinic Owners"
+      who: "Private practice owners in target cities"
+      strategy: "Professional: highlight microscope + endo expertise"
+    - category: "Kupot Holim HR"
+      who: "Recruitment managers at Clalit, Maccabi, Meuhedet, Leumit"
+      strategy: "Formal: reference credentials and availability"
+    - category: "Dental Faculty"
+      who: "Hebrew University, TAU dental school faculty"
+      strategy: "Academic: mention clinical teaching interest"
+    - category: "Recruiters"
+      who: "Healthcare recruitment agencies"
+      strategy: "Direct: state specialty and availability"
+    - category: "MedTech Founders"
+      who: "Dental tech startup founders"
+      strategy: "Tech: highlight dual clinical-developer profile"
+    - category: "Industry Reps"
+      who: "Straumann, Nobel Biocare, Dentsply Israel reps"
+      strategy: "Industry: reference microscope/endo expertise"
+
+  linkedin_groups:
+    - "IDF Veterans Network / רשת בוגרי צה״ל"
+    - "Israel Healthcare Professionals"
+    - "Israeli Dental Association Network"
+    - "Digital Health Israel"
+    - "Startup Nation Healthcare"
+    - "Russian-Speaking Professionals in Israel"
+    - "MedTech Israel"
+
+headlines:
+  en: "Endodontist (DMD) | IDF Medical Corps Captain | 10+ Years | Surgical Microscope | 1,700+ Procedures"
+  he: "רופא שיניים (DMD) | קצין חיל רפואה צה״ל | אנדודונטיה | 10+ שנות ניסיון | מיקרוסקופ כירורגי"
+
+about_structure:
+  - section: "opening"
+    content: "Endodontist and former IDF Medical Corps Captain with 10+ years of clinical experience, seeking opportunities in Israeli dental practice."
+  - section: "military"
+    content: "IDF Medical Corps Captain (2015-2023), managed dental clinic operations, led clinical teams, responsible for treatment protocols and quality assurance."
+  - section: "clinical"
+    content: "1,700+ endodontic procedures, 375+ hours of surgical microscope work, advanced rotary NiTi instrumentation, CBCT-guided treatment planning."
+  - section: "international"
+    content: "DMD degree, nostrifikace (Charles University, 2025), European clinical experience."
+  - section: "languages"
+    content: "Hebrew, English, Russian, Ukrainian, Czech — serving Israel's diverse patient population."
+  - section: "cta"
+    content: "Open to clinical positions, partnerships, and consulting roles in endodontics across Israel."
+
+optimization_status:
+  current_phase: "active"  # setup | active | maintaining
+  premium_active: false
+  open_to_work: false
+  profile_languages: ["en"]  # ["en", "he"] when HE version configured
+  groups_joined: []
+  connections_sent_this_week: 0
+  posts_this_week: 0
+  last_audit_date: null
+  last_metrics_check: null
+  ssi_score: null
+  recruiter_tier: null  # A | B | C | D
+  content_bank_count: 0
+  total_commands_available: 29
+
+# ─── POSTING SCHEDULE ───────────────────────────────────────────────────
+posting_schedule:
+  # Optimal times for Israeli audience (IST = UTC+2/+3)
+  best_days: ["Sunday", "Thursday"]  # Israeli business week start + mid
+  best_times:
+    morning: "08:00-09:00 IST"    # commute time
+    lunch: "12:00-13:00 IST"      # lunch break scrolling
+    evening: "18:00-19:00 IST"    # post-work wind-down
+  avoid: ["Friday", "Saturday"]    # Shabbat — very low engagement
+  timezone: "Asia/Jerusalem"
+  notes: "Sunday morning = highest Israeli LinkedIn activity of the week"
+
+# ─── ENGAGEMENT TARGETS ─────────────────────────────────────────────────
+engagement_targets:
+  weekly:
+    connections_sent: 10
+    posts_published: 1
+    comments_written: 10
+    likes_given: 15
+    inmails_sent: 2
+  monthly:
+    posts_published: 4
+    new_connections: 40
+    profile_views_target: 100
+    search_appearances_target: 50
+    content_bank_entries: 6
+  daily:
+    likes_comments: 3           # minimum daily interactions (Sun-Thu)
+    time_on_platform_min: 15    # minimum minutes
+
+# ─── GROWTH MILESTONES ──────────────────────────────────────────────────
+growth_milestones:
+  connections:
+    - threshold: 50
+      label: "Starter"
+      unlocks: "Basic credibility, profile looks active"
+    - threshold: 100
+      label: "Visible"
+      unlocks: "Appear in more searches, 2nd degree network grows"
+    - threshold: 250
+      label: "Networked"
+      unlocks: "2nd degree reach to most Israeli dental professionals"
+    - threshold: 500
+      label: "Established"
+      unlocks: "500+ badge displayed, full search visibility"
+      priority: "high"
+    - threshold: 1000
+      label: "Authority"
+      unlocks: "Thought leader positioning, top 1% dental network"
+  engagement:
+    - metric: "profile_views_weekly"
+      threshold: 50
+      label: "On the Radar"
+    - metric: "profile_views_weekly"
+      threshold: 150
+      label: "High Visibility"
+    - metric: "search_appearances_weekly"
+      threshold: 100
+      label: "Search Optimized"
+    - metric: "posts_engagement_rate"
+      threshold: 3.0
+      label: "Engaging Content"
+      description: "3%+ engagement = top 10% of LinkedIn posters"
+    - metric: "ssi_score"
+      threshold: 70
+      label: "Social Selling Pro"
+      description: "SSI ≥70 = top 5% in your industry"
