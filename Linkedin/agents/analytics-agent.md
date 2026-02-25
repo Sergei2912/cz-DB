@@ -25,6 +25,7 @@ Tracker Agent (weekly status) + User (on-demand)
 
 > All database IDs are centralized in `data/profile-context.yaml` § `data_sources`.
 > Always use IDs from YAML — never hardcode.
+> **Never use `notion-fetch` with `collection://` URLs** — use `notion-search` with `data_source_url` instead.
 
 **Primary — LinkedIn Optimizer Hub:**
 - Metrics Log — time-series performance data

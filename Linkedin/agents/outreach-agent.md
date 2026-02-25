@@ -312,6 +312,7 @@ Track week-over-week outreach activity:
 
 > All database IDs are centralized in `data/profile-context.yaml` § `data_sources`.
 > Always use IDs from YAML — never hardcode.
+> **Never use `notion-fetch` with `collection://` URLs** — use `notion-search` with `data_source_url` instead.
 >
 > **Databases used:** Skills, CV Items, Timeline Events, Medical Lexicon
 

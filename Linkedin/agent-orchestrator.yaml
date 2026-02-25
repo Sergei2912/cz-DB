@@ -43,6 +43,7 @@ projects:
         priority: action
 
 # --- Notification routing ---
+# TODO: Add Slack/webhook channels for remote notifications when team grows.
 notificationRouting:
   urgent: [desktop]
   action: [desktop]
@@ -50,24 +51,26 @@ notificationRouting:
   info: [desktop]
 
 # --- Reactions ---
+# TODO: Enable SCM reactions when CI/CD pipeline is configured for this project.
+# Currently no CI pipeline exists — these reactions would never fire.
 reactions:
-  ci-failed:
-    auto: true
-    action: send-to-agent
-    retries: 2
-    escalateAfter: 2
-  changes-requested:
-    auto: true
-    action: send-to-agent
-    escalateAfter: 30m
-  merge-conflicts:
-    auto: true
-    action: send-to-agent
-    retries: 1
-  approved-and-green:
-    auto: false
-    action: notify
-    priority: action
+  # ci-failed:           # TODO: enable when CI pipeline is configured
+  #   auto: true
+  #   action: send-to-agent
+  #   retries: 2
+  #   escalateAfter: 2
+  # changes-requested:   # TODO: enable when PR review workflow is active
+  #   auto: true
+  #   action: send-to-agent
+  #   escalateAfter: 30m
+  # merge-conflicts:     # TODO: enable when multi-branch workflow is active
+  #   auto: true
+  #   action: send-to-agent
+  #   retries: 1
+  # approved-and-green:  # TODO: enable when CI + review are both configured
+  #   auto: false
+  #   action: notify
+  #   priority: action
   agent-stuck:
     auto: true
     threshold: 10m

@@ -85,6 +85,7 @@ Hebrew formality level depends heavily on the relationship type. Use the contact
 
 > Database ID: See `data/profile-context.yaml` § `data_sources.universita_hub.databases.medical_lexicon`.
 > Always use the ID from YAML — never hardcode.
+> **Never use `notion-fetch` with `collection://` URLs** — use `notion-search` with `data_source_url` instead.
 
 **Query:** All terms where Hebrew field is not empty.
 

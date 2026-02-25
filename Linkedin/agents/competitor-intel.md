@@ -52,6 +52,7 @@ Content Generator (topic gaps) + Profile Auditor (feature gaps) + Tracker (compe
 
 > All database IDs are centralized in `data/profile-context.yaml` § `data_sources`.
 > Always use IDs from YAML — never hardcode.
+> **Never use `notion-fetch` with `collection://` URLs** — use `notion-search` with `data_source_url` instead.
 
 - Skills (27) — Sergii's skill keywords for overlap check
 - CV Items (25) — Sergii's experience for comparison

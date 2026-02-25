@@ -215,9 +215,28 @@ When saving to Content Bank (`f295698f-ca84-4d74-b06f-b74afa1cc96c`):
 - **Status:** Draft, Ready, Published, Archived
 - **Language:** English, Hebrew, EN+HE
 
+## Scaling Limitations
+
+- **Single-profile:** All 8 agents, 13 DBs, and templates are hardwired to Dr. Anipreyev. Adding a second profile would require duplicating 15-20+ files.
+- **Single-user:** No RBAC, no approval workflows. The user is the sole gate for content publishing.
+- **No publish pipeline:** Content is saved as Draft in Notion. Manual copy-paste to LinkedIn — no API integration.
+- **Notion as shared state:** No multi-session isolation. Running two agents that write to the same DB concurrently may cause duplicates (see `.agent-rules.md` § Parallelism Safety).
+
+## First Run Order
+
+If starting from scratch, follow this sequence:
+
+1. Populate Universita Hub (Skills, CV Items, Timeline Events, Medical Lexicon) in Notion
+2. `/audit` — first profile audit (creates Audit History baseline)
+3. `/headline` + `/about` — generate core profile sections
+4. `/post` — first content piece (pick highest-weight pillar)
+5. `/weekly` — first weekly action plan
+6. `/competitors` — competitor analysis (requires browser + LinkedIn login)
+7. `/pipeline` — initialize outreach pipeline
+
 ## Git
 
-Repository root: `~/Desktop/` (sparse-checkout includes `Linkedin/linkedin-optimizer/`).
+Repository root: `~/Desktop/` (sparse-checkout includes `Linkedin/`).
 Remote: `origin` → `github.com/Sergei2912/cz-career-architect.git`
 
 ```bash
@@ -228,7 +247,7 @@ PRE_COMMIT_ALLOW_NO_CONFIG=1 git -C ~/Desktop commit -m "message"
 git -C ~/Desktop status -- "Linkedin/"
 git -C ~/Desktop diff -- "Linkedin/"
 git -C ~/Desktop log --oneline -10 -- "Linkedin/"
-git -C ~/Desktop add Linkedin/linkedin-optimizer/path/to/file
+git -C ~/Desktop add Linkedin/path/to/file
 ```
 
 ## Related Config Files
